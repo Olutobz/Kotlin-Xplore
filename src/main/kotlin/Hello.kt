@@ -1,5 +1,6 @@
 package main.kotlin
 
+import main.kotlin.aquarium.Aquarium
 import java.util.*
 
 fun feedTheFish() {
@@ -100,6 +101,9 @@ fun printPairs() {
     println(equip.first)
     println(equip.second)
 
+    val plant : Aquarium? = null
+    plant.pull()
+
 }
 
 fun giveMeATool(): Pair<String, String> {
@@ -114,3 +118,9 @@ fun destructing() {
 }
 
 fun String.hasSpaces() = find { it == ' ' } != null
+
+fun Aquarium?.pull() {
+    this?.apply {
+        println("Removing $this")
+    }
+}
