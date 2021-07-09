@@ -17,6 +17,7 @@ fun main() {
     printPairs()
     giveMeATool()
     destructing()
+    extensionExample()
 }
 
 fun randomDay(): String {
@@ -101,7 +102,7 @@ fun printPairs() {
     println(equip.first)
     println(equip.second)
 
-    val plant : Aquarium? = null
+    val plant: Aquarium? = null
     plant.pull()
 
 }
@@ -118,6 +119,10 @@ fun destructing() {
 }
 
 fun String.hasSpaces() = find { it == ' ' } != null
+
+fun extensionExample() {
+    "Android development in kotlin".hasSpaces()
+}
 
 fun Aquarium?.pull() {
     this?.apply {

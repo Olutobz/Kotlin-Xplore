@@ -1,17 +1,21 @@
 package main.kotlin.generics
 
-class Aquarium<T : WaterSupply>(val waterSupply: T) {
+class Aquarium<out T : WaterSupply>(val waterSupply: T) {
     fun addWater() {
         check(!waterSupply.needsProcessing) {
             "Water supply needs processing first"
         }
-
+        
         println("Adding water from $waterSupply")
     }
 }
 
+fun addItemTo(aquarium: Aquarium<WaterSupply>) = println("Item added")
+
+
 fun genericsExample() {
     val aquarium = Aquarium(TapWater())
+    addItemTo(aquarium)
     println("Water needs processing: ${aquarium.waterSupply.needsProcessing}")
     aquarium.waterSupply.addChemicalCleaners()
     println("Water needs processing: ${aquarium.waterSupply.needsProcessing}")
