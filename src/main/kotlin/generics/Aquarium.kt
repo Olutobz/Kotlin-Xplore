@@ -27,7 +27,6 @@ fun genericsExample() {
 
     val fishAquarium = Aquarium(FishStoreWater())
 
-
 }
 
 
