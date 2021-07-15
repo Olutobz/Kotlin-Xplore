@@ -50,8 +50,8 @@ class TowerTank(override var height: Int, var diameter: Int) :
 }
 
 sealed class Seal
-class SeaLion : Seal()
-class Walrus : Seal()
+object SeaLion : Seal()
+object Walrus : Seal()
 
 fun matchSeal(seal: Seal): String {
     return when (seal) {

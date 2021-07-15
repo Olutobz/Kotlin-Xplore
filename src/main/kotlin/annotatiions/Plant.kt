@@ -18,10 +18,10 @@ class Plant {
     fun fertilize() {}
 
     @get:OnGet
-    val isGrowing : Boolean = true
+    val isGrowing: Boolean = true
 
     @set:OnSet
-    var needFood : Boolean = false
+    var needFood: Boolean = false
 }
 
 fun testAnnotations() {
@@ -45,4 +45,14 @@ fun testAnnotations() {
 
 fun main() {
     testAnnotations()
+    labels()
+}
+
+fun labels() {
+    outerLoop@ for (i in 1..100) {
+        print("$i ")
+        for (j in 1..100) {
+            if (i > 10) break@outerLoop
+        }
+    }
 }

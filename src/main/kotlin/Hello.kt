@@ -18,6 +18,7 @@ fun main() {
     giveMeATool()
     destructing()
     extensionExample()
+    testLambdas()
 }
 
 fun randomDay(): String {
@@ -128,4 +129,11 @@ fun Aquarium?.pull() {
     this?.apply {
         println("Removing $this")
     }
+}
+
+// Testing lambdas
+fun testLambdas() {
+    val waterFilter = { dirty: Int -> dirty / 2 }
+    println(waterFilter)
+    println(waterFilter(30))
 }
