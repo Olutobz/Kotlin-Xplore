@@ -46,6 +46,7 @@ fun testAnnotations() {
 fun main() {
     testAnnotations()
     labels()
+    fishClass()
 }
 
 fun labels() {
@@ -55,4 +56,30 @@ fun labels() {
             if (i > 10) break@outerLoop
         }
     }
+    println()
+}
+
+data class Fish(var name: String)
+
+fun fishClass() {
+    val myFish = listOf(Fish("Flipper"), Fish("Moby dick"), Fish("Dory"))
+    myFish.filter { it.name.contains("i") }.joinToString(", ") { it.name }
+    println(myFish)
+
+    val fish = Fish("splashy")
+    with(fish.name) {
+        println(capitalize())
+    }
+
+    val fish2 = Fish(name = "splashy").apply {
+        name = "spurky"
+    }
+    println(fish2)
+
+    println(
+        fish.name.capitalize()
+        .let { it + "fish" }.length
+        .let { it + 31 })
+    println(fish)
+
 }
