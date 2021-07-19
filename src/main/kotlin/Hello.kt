@@ -114,7 +114,7 @@ fun giveMeATool(): Pair<String, String> {
 
 fun destructing() {
     val (tool, use) = giveMeATool()
-    println("Destructing $tool and $use")
+         println("Destructing $tool and $use")
     println("Testing extension function".hasSpaces())
 
 }
