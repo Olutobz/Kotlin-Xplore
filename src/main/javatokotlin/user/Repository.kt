@@ -23,19 +23,16 @@ object Repository {
 
     val formattedUserNames: List<String?>
         get() {
-            val userNames = ArrayList<String>(users.size)
-            for ((firstName, lastName) in users) {
-                val name = if (lastName != null) {
-                    if (firstName != null) {
-                        "$firstName $lastName"
+            return users.map { user ->
+                if (user.lastName != null) {
+                    if (user.firstName != null) {
+                        "${user.firstName} ${user.lastName}"
                     } else {
-                        lastName
+                        user.lastName ?: "unknown"
                     }
                 } else {
-                    firstName ?: "Unknown"
+                    user.firstName ?: "Unknown"
                 }
-                userNames.add(name)
             }
-            return userNames
         }
 }

@@ -137,7 +137,3 @@ fun testLambdas() {
     println(waterFilter)
     println(waterFilter(30))
 }
-
-fun Account() {
-    val user = "customer"
-}
