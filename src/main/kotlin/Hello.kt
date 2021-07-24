@@ -114,7 +114,7 @@ fun giveMeATool(): Pair<String, String> {
 
 fun destructing() {
     val (tool, use) = giveMeATool()
-         println("Destructing $tool and $use")
+    println("Destructing $tool and $use")
     println("Testing extension function".hasSpaces())
 
 }
@@ -136,4 +136,9 @@ fun testLambdas() {
     val waterFilter = { dirty: Int -> dirty / 2 }
     println(waterFilter)
     println(waterFilter(30))
+}
+
+fun intro(name: String) {
+    print(name)
+
 }
