@@ -1,38 +1,61 @@
 package main.javatokotlin.user
 
-import java.util.ArrayList
-
 object Repository {
 
-    private val users = mutableListOf<User>()
+    private val _users = mutableListOf<User>()
 
-    // keeping the constructor private to enforce the usage of getInstance
+    val users: List<User>
+        get() = _users
+
+    val formattedUserNames: List<String?>
+        get() {
+            return _users.map { it ->
+                if (it.lastName != null) {
+                    if (it.firstName != null) {
+                        "${it.firstName} ${it.lastName}"
+                    } else {
+                        it.lastName ?: "unknown"
+                    }
+                } else {
+                    it.firstName ?: "Unknown"
+                }
+            }
+        }
+
     init {
         val user1 = User("Chinedu", "Ihedioha")
         val user2 = User("Uche", "")
         val user3 = User("Olutoba", null)
 
-        users.add(user1)
-        users.add(user2)
-        users.add(user3)
+        _users.add(user1)
+        _users.add(user2)
+        _users.add(user3)
     }
-
-    fun getUsers(): List<User> {
-        return users
-    }
-
-    val formattedUserNames: List<String?>
-        get() {
-            return users.map { user ->
-                if (user.lastName != null) {
-                    if (user.firstName != null) {
-                        "${user.firstName} ${user.lastName}"
-                    } else {
-                        user.lastName ?: "unknown"
-                    }
-                } else {
-                    user.firstName ?: "Unknown"
-                }
-            }
-        }
 }
+
+// extension function
+fun User.getFormattedName(): String {
+    return if (lastName != null) {
+        if (firstName != null) {
+            "$firstName $lastName"
+        } else {
+            lastName ?: "Unknown"
+        }
+    } else {
+        firstName ?: "unknown"
+    }
+}
+
+// extension property
+val User.userFormattedName: String
+    get() {
+        return if (lastName != null) {
+            if (firstName != null) {
+                "$firstName $lastName"
+            } else {
+                lastName ?: "Unknown"
+            }
+        } else {
+            firstName ?: "Unknown"
+        }
+    }
