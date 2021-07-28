@@ -2,36 +2,27 @@ package main.javatokotlin.user
 
 object Repository {
 
-    private val _users = mutableListOf<User>()
+    private val _users =
+        mutableListOf(User("Chinedu", "Ihedioha"), User("Uche", ""), User("Olutoba", null))
 
     val users: List<User>
         get() = _users
 
     val formattedUserNames: List<String?>
-        get() {
-            return _users.map { it ->
-                if (it.lastName != null) {
-                    if (it.firstName != null) {
-                        "${it.firstName} ${it.lastName}"
-                    } else {
-                        it.lastName ?: "unknown"
-                    }
-                } else {
-                    it.firstName ?: "Unknown"
-                }
-            }
-        }
-
-    init {
-        val user1 = User("Chinedu", "Ihedioha")
-        val user2 = User("Uche", "")
-        val user3 = User("Olutoba", null)
-
-        _users.add(user1)
-        _users.add(user2)
-        _users.add(user3)
-    }
+        get() = _users.map { user -> user.userFormattedName }
 }
+
+//    init {
+//        val user1 = User("Chinedu", "Ihedioha")
+//        val user2 = User("Uche", "")
+//        val user3 = User("Olutoba", null)
+//
+//        _users.apply {
+//            add(user1)
+//            add(user2)
+//            add(user3)
+//        }
+//    }
 
 // extension function
 fun User.getFormattedName(): String {
@@ -59,3 +50,7 @@ val User.userFormattedName: String
             firstName ?: "Unknown"
         }
     }
+
+val user = User("Olutoba ", "Onikoyi")
+val name = user.getFormattedName()
+val formattedName = user.userFormattedName
