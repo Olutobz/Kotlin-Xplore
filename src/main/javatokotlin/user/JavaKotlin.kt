@@ -350,6 +350,13 @@ class SomeClass2 : SomeInterface2<List<String>> {
     }
 }
 
+enum class Direction(val direction: Int) {
+    NORTH(1),
+    SOUTH(2),
+    WEST(3),
+    EAST(4);
+}
+
 /*
  => In java
  Person person;
@@ -378,12 +385,6 @@ public enum Direction {
 }
  */
 
-enum class Direction(val direction: Int) {
-    NORTH(1),
-    SOUTH(2),
-    WEST(3),
-    EAST(4);
-}
 
 /* => In java
 List<Profile> profiles = loadProfiles(context);
