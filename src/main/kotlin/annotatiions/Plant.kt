@@ -78,8 +78,8 @@ fun fishClass() {
 
     println(
         fish.name.capitalize()
-        .let { it + "fish" }.length
-        .let { it + 31 })
+            .let { it + "fish" }.length
+            .let { it + 31 })
     println(fish)
 
 }

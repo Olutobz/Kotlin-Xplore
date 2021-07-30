@@ -12,17 +12,18 @@ object Repository {
         get() = _users.map { user -> user.userFormattedName }
 }
 
-//    init {
-//        val user1 = User("Chinedu", "Ihedioha")
-//        val user2 = User("Uche", "")
-//        val user3 = User("Olutoba", null)
-//
-//        _users.apply {
-//            add(user1)
-//            add(user2)
-//            add(user3)
-//        }
-//    }
+/*    init {
+        val user1 = User("Chinedu", "Ihedioha")
+        val user2 = User("Uche", "")
+        val user3 = User("Olutoba", null)
+
+        _users.apply {
+            add(user1)
+            add(user2)
+            add(user3)
+        }
+    }
+*/
 
 // extension function
 fun User.getFormattedName(): String {
