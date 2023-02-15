@@ -8,8 +8,8 @@ class InlineFuncDemo {
         println("Guide ended")
     }
 
-    private fun teach() {
-
+    private inline fun teach() {
+        print("Teach")
     }
 
 
