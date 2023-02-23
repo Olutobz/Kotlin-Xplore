@@ -15,5 +15,21 @@ class DemoPractices {
         }
     }
 
+    fun divideByThree(x: Int): Int {
+        return x / 3
+    }
+
+    private inline fun repeat(times: Int, action: () -> Unit) {
+        for (i in 0 until times) {
+            action()
+        }
+    }
+
+    fun main(args: Array<String>) {
+        repeat(5) {
+            println("Hello World!")
+        }
+    }
+
 
 }
