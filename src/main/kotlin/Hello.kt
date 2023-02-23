@@ -80,7 +80,7 @@ fun maps() {
     val cures = hashMapOf("white spots" to "Itch", "red sores" to "hole disease")
     println(cures["white spots"])
     println(cures["red sores"])
-    println(cures.getOrDefault("mami", "Olutoba's babe"))
+    println(cures.getOrDefault("Dami", "Olutoba's babe"))
     println(cures.getOrElse("bloating") { "No cure for this" })
 
     val inventory = mutableMapOf("fish nets" to 1)
