@@ -25,10 +25,33 @@ class DemoPractices {
         }
     }
 
+    private inline fun repeatII(times: Int, noinline action: () -> Unit) {
+        for (i in 0 until times) {
+            action()
+        }
+    }
+
+    private inline fun doSomething(a: Int, b: Int, noinline operation: (Int, Int) -> Int) {
+        val res = operation(a, b)
+        println(res)
+
+    }
+
+    fun add(a: Int, b: Int): Int {
+        // Some complex logic
+        return a + b
+    }
+
     fun main(args: Array<String>) {
         repeat(5) {
             println("Hello World!")
         }
+
+        doSomething(2, 4) { a, b ->
+            a + b
+        }
+
+        doSomething(3, 6, ::add)
     }
 
 
