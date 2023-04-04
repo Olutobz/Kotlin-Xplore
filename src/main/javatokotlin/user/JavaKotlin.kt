@@ -4,19 +4,10 @@ class JavaKotlin {
 
     fun main() {
 
-//      System.out.println("My name is Olutoba");
-        println("My name is Olutoba")
-
-//      String name = "Olutoba Onikoyi";
-//      final String otherName = "Damola Onikoyi";
-        var name = "Olutoba Onikoyi"
-        val otherName = "Damola Onikoyi"
-
-        /*  => In java
-                 String text = "First Line\n" +
-                              "Second Line\n" +
-                              "Third Line";
-        */
+        val name = "Damola"
+        val middleName = "Olutoba"
+        val lastName = "Onikoyi"
+        val fullName = "My name is $name $middleName $lastName"
 
         val text = """
         |First Line
@@ -24,58 +15,32 @@ class JavaKotlin {
         |Third Line
         """.trimMargin()
 
-
-        /*       In java
-                 if (text != null) {
-                    int length = text.length();
-                }
-        */
-
         text.let {
             val length = text.length
 //             Or
 //             val length = text?.length
         }
 
-        /*      => In java
-                String str = "Java to Kotlin Guide";
-                String substr = str.substring(0, 4);
-                System.out.println("substring = " + substr);
-
-                => print kotlin
-                substr = str.substring(8..14);
-                System.out.println("substring $substr");
-
-        */
-
         val str = "Java to kotlin Guide"
-        //print java
-        var substr = str.substring(0..3)
-        println("substring $substr")
-        // print kotlin
+        var substr = str.substring(0..4)
+        println("substring is $substr")
         substr = str.substring(8..13)
-        println("substring $substr")
+        println("substring is $substr")
 
-        /*      => In java
-                final int andResult  = a & b;
-                final int orResult   = a | b;
-                final int xorResult  = a ^ b;
-                final int rightShift = a >> 2;
-                final int leftShift  = a << 2;
-                final int unsignedRightShift = a >>> 2;
-        */
+        val a = 0
+        val b = 1
 
-        /*      => In kotlin
-                val andResult  = a and b
-                val orResult   = a or b
-                val xorResult  = a xor b
-                val rightShift = a shr 2
-                val leftShift  = a shl 2
-                val unsignedRightShift = a ushr 2
+        val andResult = a and b
+        val orResult = a or b
+        val xorResult = a xor b
+        val rightShift = a shr 2
+        val leftShift = a shl 2
+        val unsignedRightShift = a ushr 2
 
+        /*
                 => In java
                 if (object instanceOf Car) {
-                        Car car = (Car) object
+                        Car aCar = (Car) object
                 }
 
                 => In kotlin
@@ -117,6 +82,7 @@ class JavaKotlin {
                   }
         * */
         var score = 7
+
         var grade = when (score) {
             9, 10 -> "Excellent"
             in 6..8 -> "Good"
@@ -229,7 +195,6 @@ class JavaKotlin {
 
 }
 
-
 /*  In java
     public class Utils {
        private Utils () {
@@ -287,6 +252,7 @@ data class Developer(var name: String, var age: Int)
 // cloning or copying
 val dev = Developer("Olutoba", 24)
 val dev2 = dev.copy()
+
 
 // in case you only want to copy selected properties
 val dev3 = dev.copy(age = 24)
