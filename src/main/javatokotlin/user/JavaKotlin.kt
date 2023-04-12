@@ -8,18 +8,8 @@ class JavaKotlin {
         val middleName = "Olutoba"
         val lastName = "Onikoyi"
         val fullName = "My name is $name $middleName $lastName"
+        println(fullName)
 
-        val text = """
-        |First Line
-        |Second Line
-        |Third Line
-        """.trimMargin()
-
-        text.let {
-            val length = text.length
-//             Or
-//             val length = text?.length
-        }
 
         val str = "Java to kotlin Guide"
         var substr = str.substring(0..4)
