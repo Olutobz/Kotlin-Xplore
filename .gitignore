@@ -13,3 +13,5 @@
 /.idea/
 /out
 Kotlin-Xplore.iml
+.idea
+/Kotlin-Xplore.iml
