@@ -3,12 +3,6 @@ package main.kotlin
 import main.kotlin.aquarium.Aquarium
 import java.util.*
 
-fun feedTheFish() {
-    val day = randomDay()
-    val food = fishFood(day)
-    println("Today is $day and the fish eat $food")
-}
-
 fun main() {
     feedTheFish()
     eagerExample()
@@ -21,7 +15,13 @@ fun main() {
     testLambdas()
 }
 
-fun randomDay(): String {
+fun feedTheFish() {
+    val day = getRandomDay()
+    val food = fishFood(day)
+    println("Today is $day and the fish eat $food")
+}
+
+fun getRandomDay(): String {
     val week = arrayOf(
         "Monday", "Tuesday", "Wednesday", "Thursday",
         "Friday", "Saturday", "Sunday"

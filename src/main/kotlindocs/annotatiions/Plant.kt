@@ -1,4 +1,4 @@
-package main.kotlin.annotatiions
+package main.kotlindocs.annotatiions
 
 import kotlin.reflect.full.declaredMemberFunctions
 import kotlin.reflect.full.findAnnotation

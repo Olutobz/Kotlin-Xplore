@@ -7,14 +7,20 @@ package main.javatokotlin.basics
  */
 
 class Variables {
-
-    private val firstName : String = "Damola"
-    private val middleName  = "Olutoba"
+    private val firstName: String = "Damola"
+    private val middleName = "Olutoba"
     private val lastName = "Onikoyi"
-    val fullName = "My name is $firstName $middleName $lastName"
+    private val fullName = "My name is $firstName $middleName $lastName"
+    private val shorterName = "Name is ${firstName.substring(2)}"
 
+    private val someText = "Java to kotlin Guide"
+    private var substr = someText.substring(0..4)
+    private val textSize = someText.length
 
-    private val str = "Java to kotlin Guide"
-    var substr = str.substring(0..4)
-
+    fun main() {
+        println(fullName)
+        println(shorterName)
+        println(substr)
+        println(textSize)
+    }
 }

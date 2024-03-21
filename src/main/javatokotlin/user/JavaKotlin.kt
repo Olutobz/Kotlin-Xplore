@@ -4,29 +4,6 @@ class JavaKotlin {
 
     fun main() {
 
-        val name = "Damola"
-        val middleName = "Olutoba"
-        val lastName = "Onikoyi"
-        val fullName = "My name is $name $middleName $lastName"
-        println(fullName)
-
-
-        val str = "Java to kotlin Guide"
-        var substr = str.substring(0..4)
-        println("substring is $substr")
-        substr = str.substring(8..13)
-        println("substring is $substr")
-
-        val a = 0
-        val b = 1
-
-        val andResult = a and b
-        val orResult = a or b
-        val xorResult = a xor b
-        val rightShift = a shr 2
-        val leftShift = a shl 2
-        val unsignedRightShift = a ushr 2
-
         /*
                 => In java
                 if (object instanceOf Car) {
