@@ -33,5 +33,19 @@ fun main() {
     val triangle = Triangle(a = a, b = b, c = c)
     triangle.changeTypeName("Square")
     println("New name of shape = ${triangle.shapeType}")
+    println("The max area of 2 shapes = ${maxArea(circle, triangle)}")
+    println("The max area of 3 shapes = ${maxArea(circle, triangle, rectangle)}")
 
+}
+
+fun maxArea(shape1: Shape, shape2: Shape): Double {
+    val areaSquare1 = shape1.area()
+    val areaSquare2 = shape2.area()
+    return if (areaSquare1 > areaSquare2) areaSquare1 else areaSquare2
+}
+
+fun maxArea(shape1: Shape, shape2: Shape, shape3: Shape): Double {
+    val maxAreaOfTwoShapes = maxArea(shape1, shape2)
+    val areaSquare3 = shape3.area()
+    return if (areaSquare3 > maxAreaOfTwoShapes) areaSquare3 else maxAreaOfTwoShapes
 }
