@@ -14,9 +14,9 @@ class Triangle(
 ) : Shape("Triangle") {
 
     init {
-        println("$name created with radius = $a, b = $b, c = $c")
-        println("$name area is = ${area()}")
-        println("$name perimeter is = ${perimeter()}")
+        println("$shapeType created with radius = $a, b = $b, c = $c")
+        println("$shapeType area is = ${area()}")
+        println("$shapeType perimeter is = ${perimeter()}")
     }
 
     private fun area() = sqrt((perimeter() / 2) * (perimeter() / 2 - a) * (perimeter() / 2 - c))

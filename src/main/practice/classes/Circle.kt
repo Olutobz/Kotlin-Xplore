@@ -10,9 +10,9 @@ class Circle(
 ) : Shape("Circle") {
 
     init {
-        println("$name created with radius = $radius")
-        println("$name area is = ${area()}")
-        println("$name perimeter is = ${perimeter()}")
+        println("$shapeType created with radius = $radius")
+        println("$shapeType area is = ${area()}")
+        println("$shapeType perimeter is = ${perimeter()}")
     }
 
     private fun area() = Math.PI * radius * radius

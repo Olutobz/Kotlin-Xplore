@@ -7,15 +7,15 @@ package main.practice.classes
  */
 
 open class Shape(
-    var name: String
+    var shapeType: String
 ) {
 
     init {
         println("I am the supper class")
     }
 
-    fun changeName(newName: String) {
-        name = newName
+    fun changeTypeName(newType: String) {
+        shapeType = newType
     }
 
 }

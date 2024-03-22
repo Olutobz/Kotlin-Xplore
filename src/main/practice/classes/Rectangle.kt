@@ -11,10 +11,10 @@ class Rectangle(
 ) : Shape("Rectangle") {
 
     init {
-        println("$name created with length of $length and breadth of $breadth")
-        println("$name area = ${area()}")
-        println("$name isSquare? = ${isSquare()}")
-        println("$name perimeter is = ${perimeter()}")
+        println("$shapeType created with length of $length and breadth of $breadth")
+        println("$shapeType area = ${area()}")
+        println("$shapeType isSquare? = ${isSquare()}")
+        println("$shapeType perimeter is = ${perimeter()}")
     }
 
     private fun area() = length * breadth
