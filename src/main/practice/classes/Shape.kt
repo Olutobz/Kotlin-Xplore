@@ -10,6 +10,9 @@ abstract class Shape(
     var shapeType: String
 ) {
 
+    abstract fun area(): Double
+    abstract fun perimeter(): Double
+
     fun changeTypeName(newType: String) {
         shapeType = newType
     }

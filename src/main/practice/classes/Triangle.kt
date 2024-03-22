@@ -19,8 +19,8 @@ class Triangle(
         println("$shapeType perimeter is = ${perimeter()}")
     }
 
-    private fun area() = sqrt((perimeter() / 2) * (perimeter() / 2 - a) * (perimeter() / 2 - c))
+    override fun area() = sqrt((perimeter() / 2) * (perimeter() / 2 - a) * (perimeter() / 2 - c))
 
-    private fun perimeter() = a + b + c
+    override fun perimeter() = a + b + c
 
 }

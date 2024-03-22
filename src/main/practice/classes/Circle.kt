@@ -15,8 +15,8 @@ class Circle(
         println("$shapeType perimeter is = ${perimeter()}")
     }
 
-    private fun area() = Math.PI * radius * radius
+    override fun area() = Math.PI * radius * radius
 
-    private fun perimeter() = 2 * Math.PI * radius
+    override fun perimeter() = 2 * Math.PI * radius
 
 }

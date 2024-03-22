@@ -17,9 +17,9 @@ class Rectangle(
         println("$shapeType perimeter is = ${perimeter()}")
     }
 
-    private fun area() = length * breadth
+    override fun area(): Double = length * breadth
 
-    private fun perimeter() = 2 * (length.plus(breadth))
+    override fun perimeter(): Double = 2 * (length.plus(breadth))
 
     private fun isSquare() = length == breadth
 

@@ -16,19 +16,19 @@ private const val c = 10.0
 fun main() {
 
     val circle = Circle(radius = RADIUS)
-    circle.changeTypeName("${circle.shapeType} is now named Oval")
-    println(circle.shapeType)
+    circle.changeTypeName("Oval")
+    println("New name of shape = ${circle.shapeType}")
 
     println()
 
     val rectangle = Rectangle(length = LENGTH, breadth = BREADTH)
-    rectangle.changeTypeName("${rectangle.shapeType} is now named Circle")
-    println(rectangle.shapeType)
+    rectangle.changeTypeName("Circle")
+    println("New name of shape = ${rectangle.shapeType}")
 
     println()
 
     val triangle = Triangle(a = a, b = b, c = c)
-    triangle.changeTypeName("${triangle.shapeType} is now named Square")
-    println(triangle.shapeType)
+    triangle.changeTypeName("Square")
+    println("New name of shape = ${triangle.shapeType}")
 
 }
