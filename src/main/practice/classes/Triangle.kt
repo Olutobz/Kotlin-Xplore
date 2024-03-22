@@ -11,12 +11,12 @@ class Triangle(
     private val a: Double,
     private val b: Double,
     private val c: Double,
-) {
+) : Shape("Triangle") {
 
     init {
-        println("Triangle created with radius = $a, b = $b, c = $c")
-        println("Triangle area is = ${area()}")
-        println("Triangle perimeter is = ${perimeter()}")
+        println("$name created with radius = $a, b = $b, c = $c")
+        println("$name area is = ${area()}")
+        println("$name perimeter is = ${perimeter()}")
     }
 
     private fun area() = sqrt((perimeter() / 2) * (perimeter() / 2 - a) * (perimeter() / 2 - c))

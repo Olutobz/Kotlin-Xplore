@@ -8,16 +8,19 @@ package main.practice.classes
 class Rectangle(
     private val length: Double,
     private val breadth: Double,
-) {
+) : Shape("Rectangle") {
 
     init {
-        println("Rectangle created with length of $length and breadth of $breadth")
+        println("$name created with length of $length and breadth of $breadth")
+        println("$name area = ${area()}")
+        println("$name isSquare? = ${isSquare()}")
+        println("$name perimeter is = ${perimeter()}")
     }
 
-    fun area() = length * breadth
+    private fun area() = length * breadth
 
-    fun perimeter() = 2 * (length.plus(breadth))
+    private fun perimeter() = 2 * (length.plus(breadth))
 
-    fun isSquare() = length == breadth
+    private fun isSquare() = length == breadth
 
 }

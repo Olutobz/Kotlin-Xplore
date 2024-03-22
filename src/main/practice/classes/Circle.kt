@@ -7,12 +7,12 @@ package main.practice.classes
  */
 class Circle(
     private val radius: Double
-) {
+) : Shape("Circle") {
 
     init {
-        println("Circle created with radius = $radius")
-        println("Circle area is = ${area()}")
-        println("Circle perimeter is = ${perimeter()}")
+        println("$name created with radius = $radius")
+        println("$name area is = ${area()}")
+        println("$name perimeter is = ${perimeter()}")
     }
 
     private fun area() = Math.PI * radius * radius
