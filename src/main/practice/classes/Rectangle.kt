@@ -10,6 +10,9 @@ class Rectangle(
     private val breadth: Double,
 ) : Shape(ShapeTypes.RECTANGLE.name) {
 
+    constructor(a: Double) : this(a, a)
+    constructor(a: Int, b: Int) : this(a.toDouble(), b.toDouble())
+
     init {
         println("$shapeType created with length of $length and breadth of $breadth")
         println("$shapeType area = ${area()}")
