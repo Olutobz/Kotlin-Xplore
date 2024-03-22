@@ -7,7 +7,7 @@ package main.practice.classes
  */
 class Circle(
     private val radius: Double
-) : Shape("Circle") {
+) : Shape(ShapeTypes.CIRCLE.name) {
 
     init {
         println("$shapeType created with radius = $radius")

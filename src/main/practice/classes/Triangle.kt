@@ -11,7 +11,7 @@ class Triangle(
     private val a: Double,
     private val b: Double,
     private val c: Double,
-) : Shape("Triangle") {
+) : Shape(ShapeTypes.TRIANGLE.name) {
 
     init {
         println("$shapeType created with radius = $a, b = $b, c = $c")

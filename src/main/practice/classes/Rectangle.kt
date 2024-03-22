@@ -8,7 +8,7 @@ package main.practice.classes
 class Rectangle(
     private val length: Double,
     private val breadth: Double,
-) : Shape("Rectangle") {
+) : Shape(ShapeTypes.RECTANGLE.name) {
 
     init {
         println("$shapeType created with length of $length and breadth of $breadth")

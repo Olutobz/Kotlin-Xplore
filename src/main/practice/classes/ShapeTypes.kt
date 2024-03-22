@@ -5,7 +5,7 @@ package main.practice.classes
  * DATE: 22 March 2024
  * EMAIL: damexxey94@gmail.com
  */
-enum class ShapeType(name: String) {
+enum class ShapeTypes(name: String) {
     CIRCLE("Circle"),
     TRIANGLE("Triangle"),
     RECTANGLE("Rectangle")
