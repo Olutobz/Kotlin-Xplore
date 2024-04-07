@@ -25,16 +25,15 @@ fun main() {
     rectangle.changeTypeName("Circle")
     println("New name of shape = ${rectangle.shapeType}\n")
 
-    val rectangle2 = Rectangle(a = LENGTH_INT, b = BREADTH_INT)
-    rectangle2.changeTypeName("Oval2")
-    println("New name of shape = ${rectangle.shapeType}\n")
+    val rectangleInt = Rectangle(a = LENGTH_INT, b = BREADTH_INT)
+    println("New name of shape = ${rectangleInt.shapeType}\n")
 
 
     val triangle = Triangle(a = a, b = b, c = c)
-    triangle.changeTypeName("Square")
-    println("New name of shape = ${triangle.shapeType}")
-    println("The max area of 2 shapes = ${maxArea(circle, triangle)}")
-    println("The max area of 3 shapes = ${maxArea(circle, triangle, rectangle)}")
+    val maxAreaTriangleAndCircle = maxArea(circle, triangle)
+    val maxAreaRectCircleTriangle = maxArea(circle, triangle, rectangle)
+    println("The max area of 2 shapes = $maxAreaTriangleAndCircle")
+    println("The max area of 3 shapes = $maxAreaRectCircleTriangle")
 
 }
 

@@ -14,7 +14,7 @@ class Triangle(
 ) : Shape(ShapeTypes.TRIANGLE.name) {
 
     init {
-        println("$shapeType created with radius = $a, b = $b, c = $c")
+        println("$shapeType created with sides, a = $a, b = $b, c = $c")
         println("$shapeType area is = ${area()}")
         println("$shapeType perimeter is = ${perimeter()}")
     }
