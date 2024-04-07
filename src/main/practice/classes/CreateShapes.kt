@@ -20,6 +20,7 @@ fun main() {
     val circle = Circle(radius = RADIUS)
     circle.changeTypeName("Oval")
     println("New name of shape = ${circle.shapeType}\n")
+    println("Random Circle = ${Circle.randomCircle()}")
 
     val rectangle = Rectangle(length = LENGTH, breadth = BREADTH)
     rectangle.changeTypeName("Circle")

@@ -1,5 +1,7 @@
 package main.practice.classes
 
+import kotlin.random.Random
+
 /**
  * Created by Onikoyi Damola Olutoba
  * DATE: 22 March 2024
@@ -18,5 +20,12 @@ class Circle(
     override fun area() = Math.PI * radius * radius
 
     override fun perimeter() = 2 * Math.PI * radius
+
+    companion object {
+        fun randomCircle(): Circle {
+            val radius = Random.nextDouble(1.0, 20.0)
+            return Circle(radius)
+        }
+    }
 
 }
