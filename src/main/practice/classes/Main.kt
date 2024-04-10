@@ -1,7 +1,5 @@
 package main.practice.classes
 
-import java.util.Arrays
-
 /**
  * Created by Onikoyi Damola Olutoba
  * DATE: 07 April 2024
@@ -12,10 +10,18 @@ fun main() {
     val list = listOf(1, 2, 3, 4, 5, 6)
     println("Initial list: $list")
     alternateNumbers(list)
+    println()
 
     val array = arrayOf(1, 2, 3, 4, 5, 6)
-    println("Initial array: ${array.contentToString()}")
+    print("Initial array: ${array.contentToString()}\n")
     alternateNumbers(array)
+    println()
+
+    val boy = Person()
+    boy.actualAge = 27
+    boy.age = 45
+    println("Toba: actual age = ${boy.actualAge}")
+    println("Toba: pretended age = ${boy.age}")
 
 }
 
@@ -26,10 +32,10 @@ private fun alternateNumbers(list: List<Int>) {
 
     while (start <= end) {
         if (toggle) {
-            println(list[start])
+            print("${list[start]} ")
             start++
         } else {
-            println(list[end])
+            print("${list[end]} ")
             end--
         }
         toggle = !toggle
@@ -44,10 +50,10 @@ private fun alternateNumbers(array: Array<Int>) {
 
     while (start <= end) {
         if (toggle) {
-            println(array[start])
+            print("${array[start]} ")
             start++
         } else {
-            println(array[end])
+            print("${array[end]} ")
             end--
         }
         toggle = !toggle
