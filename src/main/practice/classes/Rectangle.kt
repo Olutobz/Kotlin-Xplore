@@ -14,10 +14,10 @@ class Rectangle(
     constructor(a: Int, b: Int) : this(a.toDouble(), b.toDouble())
 
     init {
-        println("$shapeType created with length of $length and breadth of $breadth")
-        println("$shapeType area = ${area()}")
-        println("$shapeType isSquare? = ${isSquare()}")
-        println("$shapeType perimeter is = ${perimeter()}")
+        println("$name created with length of $length and breadth of $breadth")
+        println("$name area = ${area()}")
+        println("$name isSquare? = ${isSquare()}")
+        println("$name perimeter is = ${perimeter()}")
     }
 
     override fun area(): Double = length * breadth

@@ -14,9 +14,9 @@ class Triangle(
 ) : Shape(ShapeTypes.TRIANGLE.name) {
 
     init {
-        println("$shapeType created with sides, a = $a, b = $b, c = $c")
-        println("$shapeType area is = ${area()}")
-        println("$shapeType perimeter is = ${perimeter()}")
+        println("$name created with sides, a = $a, b = $b, c = $c")
+        println("$name area is = ${area()}")
+        println("$name perimeter is = ${perimeter()}")
     }
 
     override fun area() = sqrt((perimeter() / 2) * (perimeter() / 2 - a) * (perimeter() / 2 - c))

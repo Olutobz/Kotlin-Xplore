@@ -12,9 +12,9 @@ class Circle(
 ) : Shape(ShapeTypes.CIRCLE.name) {
 
     init {
-        println("$shapeType created with radius = $radius")
-        println("$shapeType area is = ${area()}")
-        println("$shapeType perimeter is = ${perimeter()}")
+        println("$name created with radius = $radius")
+        println("$name area is = ${area()}")
+        println("$name perimeter is = ${perimeter()}")
     }
 
     override fun area() = Math.PI * radius * radius

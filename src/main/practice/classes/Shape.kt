@@ -7,15 +7,17 @@ package main.practice.classes
  */
 
 abstract class Shape(
-    var shapeType: String
+    var name: String
 ) {
+
+    constructor(name: String, vararg dimension: Double) : this(name)
 
     abstract fun area(): Double
 
     abstract fun perimeter(): Double
 
-    fun changeTypeName(newType: String) {
-        shapeType = newType
+    fun changeName(newName: String) {
+        name = newName
     }
 
 }
