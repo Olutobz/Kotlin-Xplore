@@ -3,51 +3,6 @@ package main.javatokotlin.user
 class JavaKotlin {
 
     fun main() {
-
-        /*
-                => In java
-                if (object instanceOf Car) {
-                        Car aCar = (Car) object
-                }
-
-                => In kotlin
-                if (object is Car) {
-                    var car = object as car // explicit casting
-                    var car = object // smart casting
-                }
-
-                => In java & kotlin
-                if (score >= 0 && score <= 300) {}
-                if (score in 0..300) {}
-
-        */
-
-        /*        => In java
-                  int score = 7;
-                  String grade;
-                  switch (score) {
-                        case 10:
-                        case 9:
-                               grade = "Excellent";
-                               break;
-                        case 8:
-                        case 7:
-                        case 6:
-                               grade = "Good";
-                               break;
-                        case 5:
-                        case 4:
-                               grade = "OK";
-                               break;
-                        case 3:
-                        case 2:
-                        case 1:
-                               grade = "Fail"
-                               break;
-                        default :
-                                 grade = "Fail"
-                  }
-        * */
         var score = 7
 
         var grade = when (score) {
