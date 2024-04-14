@@ -12,6 +12,7 @@ class Circle(
 ) : Shape(ShapeTypes.CIRCLE.name) {
 
     init {
+        if (radius < 0.0) throw NegativeRadiusException()
         println("$name created with radius = $radius")
         println("$name area is = ${area()}")
         println("$name perimeter is = ${perimeter()}")
@@ -29,3 +30,5 @@ class Circle(
     }
 
 }
+
+class NegativeRadiusException : Exception("The radius cannot be negative")
