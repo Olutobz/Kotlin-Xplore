@@ -30,11 +30,11 @@ fun main() {
 
 }
 
-fun List<Shape>.customFilter(predicate: (Shape) -> Boolean): List<Shape> {
-    val resultList = mutableListOf<Shape>()
-    for (shape in this) {
-        if (predicate(shape)) {
-            resultList.add(shape)
+fun <T> List<T>.customFilter(predicate: (T) -> Boolean): List<T> {
+    val resultList = mutableListOf<T>()
+    for (item in this) {
+        if (predicate(item)) {
+            resultList.add(item)
         }
     }
     return resultList
