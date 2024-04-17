@@ -6,7 +6,6 @@ package main.practice.classes
  * EMAIL: damexxey94@gmail.com
  */
 
-
 fun main() {
     var list = (1..20).toList()
     println("Initial list: $list")
@@ -27,6 +26,10 @@ fun main() {
     println(intList)
     val sum = intList.customSum { it % 2 == 1 }
     println("The sum is: $sum")
+
+    var triple = Triple(1.0, "Hello generics", true)
+    val customTriple = CustomTriple(2.0, "Hello Kotlin", false)
+    customTriple.printTypes()
 
 }
 
