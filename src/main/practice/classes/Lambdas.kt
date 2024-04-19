@@ -7,6 +7,7 @@ package main.practice.classes
  */
 
 fun main() {
+
     var list = (1..20).toList()
     println("Initial list: $list")
     list = list.filter { it > 8 }
@@ -27,7 +28,8 @@ fun main() {
     val sum = intList.customSum { it % 2 == 1 }
     println("The sum is: $sum")
 
-    var triple = Triple(1.0, "Hello generics", true)
+    val triple = Triple(1.0, "Hello generics", true)
+    println(triple)
     val customTriple = CustomTriple(2.0, "Hello Kotlin", false)
     customTriple.printTypes()
 

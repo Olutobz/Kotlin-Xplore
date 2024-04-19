@@ -1,4 +1,4 @@
-package main.kotlin.generics
+package main.kotlindocs.generics
 
 class MyList<T> {
     fun addItem(item : T) {}

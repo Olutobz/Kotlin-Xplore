@@ -1,4 +1,4 @@
-package main.kotlin.generics
+package main.kotlindocs.generics
 
 class Aquarium<out T : WaterSupply>(val waterSupply: T) {
     fun addWater(cleaner: Cleaner<T>) {

@@ -1,4 +1,13 @@
-package main.kotlin.generics
+package main.kotlindocs.generics
+
+
+fun main() {
+    useProducer(Case<SniperRiffle>())
+    useProducer(Case<Riffle>())
+    useConsumer(Case1<Weapon>())
+    useProducerConsumer(Case2<Riffle>())
+}
+
 
 open class Weapon
 open class Riffle : Weapon()
@@ -8,6 +17,7 @@ class SniperRiffle : Riffle()
 * Case class with modifier out produces T and it's subtypes
 * (i.e preserves subtyping)
 *  */
+
 class Case<out T> {
     private val contents = mutableListOf<T>()
     fun produce(): T = contents.last()    // Producer OK
@@ -40,11 +50,4 @@ class Case2<T> {
 fun useProducerConsumer(case: Case2<Riffle>) {
     case.produce()
     case.consume(SniperRiffle())
-}
-
-fun main() {
-    useProducer(Case<SniperRiffle>())
-    useProducer(Case<Riffle>())
-    useConsumer(Case1<Weapon>())
-    useProducerConsumer(Case2<Riffle>())
 }

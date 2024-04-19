@@ -1,4 +1,4 @@
-package main.kotlin.generics
+package main.kotlindocs.generics
 
 open class WaterSupply(var needsProcessing : Boolean)
 
