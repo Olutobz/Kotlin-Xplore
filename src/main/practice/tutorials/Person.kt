@@ -6,7 +6,7 @@ package main.practice.tutorials
  * EMAIL: damexxey94@gmail.com
  */
 
-class Sample {
+class Person {
     var actualAge: Int = 0
 
     var age: Int = 0
@@ -18,9 +18,9 @@ class Sample {
         }
 
     companion object {
-        fun getMax(vararg numbers: Int): Int {
-            var max = numbers[0]
-            for (number in numbers) {
+        fun getMaxAge(vararg ages: Int): Int {
+            var max = ages[0]
+            for (number in ages) {
                 if (number > max) max = number
             }
             return max
