@@ -1,4 +1,4 @@
-package main.practice.classes
+package main.practice.tutorials
 
 import kotlin.random.Random
 
@@ -7,9 +7,7 @@ import kotlin.random.Random
  * DATE: 22 March 2024
  * EMAIL: damexxey94@gmail.com
  */
-class Circle(
-    private val radius: Double
-) : Shape(ShapeTypes.CIRCLE.name) {
+class Circle(private val radius: Double) : Shape(ShapeType.CIRCLE.name) {
 
     init {
         if (radius < 0.0) throw NegativeRadiusException()
@@ -24,11 +22,8 @@ class Circle(
 
     companion object {
         fun randomCircle(): Circle {
-            val radius = Random.nextDouble(1.0, 20.0)
-            return Circle(radius)
+            return Circle(Random.nextDouble(1.0, 20.0))
         }
     }
 
 }
-
-class NegativeRadiusException : Exception("The radius cannot be negative")
