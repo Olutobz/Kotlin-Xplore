@@ -6,22 +6,9 @@ package main.practice.tutorials
  * EMAIL: damexxey94@gmail.com
  */
 
-fun main() {
 
-    val division = try {
-        println(divide(2.3, 0.0))
-    } catch (e: DivisionByZeroException) {
-        println(e.message)
-        println(e.stackTraceToString())
-        0.0
-    }
+sealed class CustomException(override val message: String?) : Exception() {
+    class DivisionByZeroException : CustomException("You cannot divide by zero, Please choose a different number")
 
-    println("The result of the division is $division")
-
+    class NegativeRadiusException : CustomException("The radius cannot be negative")
 }
-
-fun divide(a: Double, b: Double) = if (b == 0.0) throw DivisionByZeroException() else a / b
-
-class DivisionByZeroException : Exception("You cannot divide by zero, Please choose a different number")
-
-class NegativeRadiusException : Exception("The radius cannot be negative")
