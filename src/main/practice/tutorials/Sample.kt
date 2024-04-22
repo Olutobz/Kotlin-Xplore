@@ -1,29 +1,32 @@
 package main.practice.tutorials
 
-import kotlin.random.Random
-
 /**
  * Created by Onikoyi Damola Olutoba
  * DATE: 21 March 2024
  * EMAIL: damexxey94@gmail.com
  */
 
-fun main() {
-    val max = getMax(Random.nextInt(1, 20))
-    println("The maximum is $max")
+class Sample {
+    var actualAge: Int = 0
 
-    searchFor("How to become a good programmer")
-    searchFor(searchEngine = "Google", search = "How to improve my kotlin skills")
-}
+    var age: Int = 0
+        get() = field
+        set(value) {
+            field = if (value < 18) 18
+            else if (value in 18..30) value
+            else value - 3
+        }
 
-private fun getMax(vararg numbers: Int): Int {
-    var max = numbers[0]
-    for (number in numbers) {
-        if (number > max) max = number
+    fun getMax(vararg numbers: Int): Int {
+        var max = numbers[0]
+        for (number in numbers) {
+            if (number > max) max = number
+        }
+        return max
     }
-    return max
-}
 
-private fun searchFor(search: String, searchEngine: String = "Google") {
-    println("Searching for $search on $searchEngine")
+    fun searchFor(searchWord: String, searchEngine: String = "Google") {
+        println("Searching for $searchWord on $searchEngine")
+    }
+
 }

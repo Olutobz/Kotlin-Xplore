@@ -1,4 +1,4 @@
-package main.practice.classes
+package main.practice.tutorials
 
 /**
  * Created by Onikoyi Damola Olutoba
