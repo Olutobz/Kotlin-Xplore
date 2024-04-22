@@ -1,4 +1,4 @@
-package main.practice.classes
+package main.practice.tutorials
 
 /**
  * Created by Onikoyi Damola Olutoba
@@ -12,6 +12,7 @@ fun main() {
         println(divide(2.3, 0.0))
     } catch (e: DivisionByZeroException) {
         println(e.message)
+        println(e.stackTraceToString())
         0.0
     }
 
@@ -19,11 +20,8 @@ fun main() {
 
 }
 
-fun divide(a: Double, b: Double): Double {
-    if (b == 0.0) {
-        throw DivisionByZeroException()
-    }
-    return a / b
-}
+fun divide(a: Double, b: Double) = if (b == 0.0) throw DivisionByZeroException() else a / b
 
 class DivisionByZeroException : Exception("You cannot divide by zero, Please choose a different number")
+
+class NegativeRadiusException : Exception("The radius cannot be negative")
