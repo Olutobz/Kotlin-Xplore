@@ -17,16 +17,18 @@ class Sample {
             else value - 3
         }
 
-    fun getMax(vararg numbers: Int): Int {
-        var max = numbers[0]
-        for (number in numbers) {
-            if (number > max) max = number
+    companion object {
+        fun getMax(vararg numbers: Int): Int {
+            var max = numbers[0]
+            for (number in numbers) {
+                if (number > max) max = number
+            }
+            return max
         }
-        return max
-    }
 
-    fun searchFor(searchWord: String, searchEngine: String = "Google") {
-        println("Searching for $searchWord on $searchEngine")
+        fun searchFor(searchWord: String, searchEngine: String = "Google") {
+            println("Searching for $searchWord on $searchEngine")
+        }
     }
 
 }
