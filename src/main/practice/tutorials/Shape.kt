@@ -1,4 +1,4 @@
-package main.practice.classes
+package main.practice.tutorials
 
 /**
  * Created by Onikoyi Damola Olutoba
@@ -6,9 +6,7 @@ package main.practice.classes
  * EMAIL: damexxey94@gmail.com
  */
 
-abstract class Shape(
-    var name: String
-) {
+abstract class Shape(var name: String) {
 
     constructor(name: String, vararg dimension: Double) : this(name)
 

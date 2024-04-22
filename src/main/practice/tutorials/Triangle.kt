@@ -1,4 +1,4 @@
-package main.practice.classes
+package main.practice.tutorials
 
 import kotlin.math.sqrt
 
@@ -11,7 +11,7 @@ class Triangle(
     private val a: Double,
     private val b: Double,
     private val c: Double,
-) : Shape(ShapeTypes.TRIANGLE.name) {
+) : Shape(ShapeType.TRIANGLE.name) {
 
     init {
         println("$name created with sides, a = $a, b = $b, c = $c")

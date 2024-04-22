@@ -1,4 +1,4 @@
-package main.practice.classes
+package main.practice.tutorials
 
 /**
  * Created by Onikoyi Damola Olutoba
@@ -8,7 +8,7 @@ package main.practice.classes
 class Rectangle(
     private val length: Double,
     private val breadth: Double,
-) : Shape(ShapeTypes.RECTANGLE.name) {
+) : Shape(ShapeType.RECTANGLE.name) {
 
     constructor(a: Double) : this(a, a)
     constructor(a: Int, b: Int) : this(a.toDouble(), b.toDouble())
