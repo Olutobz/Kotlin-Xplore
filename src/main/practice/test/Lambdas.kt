@@ -1,4 +1,4 @@
-package main.practice.classes
+package main.practice.test
 
 import main.practice.tutorials.Circle
 import main.practice.tutorials.CustomTriple
@@ -42,6 +42,9 @@ fun main() {
     val productList = listOf(1, 2, 3, 4, 5, 6, 7, 8)
     println("The product of $productList is ${productList.products()}")
 
+    println("Your data is loading ...")
+    loadDataFromServer { println("Loaded data: $it") }
+
 }
 
 fun <T> List<T>.customFilter(predicate: (T) -> Boolean): List<T> {
@@ -70,4 +73,10 @@ fun List<Int>.products(): Int {
         result *= value
     }
     return result
+}
+
+fun loadDataFromServer(callback: (List<String>) -> Unit) {
+    Thread.sleep(5000)
+    val data = listOf("Olutoba", "New York", "Android", "California", "Software Engineer")
+    callback(data)
 }

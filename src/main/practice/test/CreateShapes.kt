@@ -1,4 +1,4 @@
-package main.practice.classes
+package main.practice.test
 
 import main.practice.tutorials.Circle
 import main.practice.tutorials.Rectangle

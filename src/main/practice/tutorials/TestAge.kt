@@ -1,7 +1,5 @@
-package main.practice.classes
+package main.practice.tutorials
 
-import main.practice.tutorials.CustomException
-import main.practice.tutorials.Person
 import kotlin.random.Random
 
 
