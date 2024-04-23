@@ -47,7 +47,7 @@ fun main() {
 
 }
 
-fun <T> List<T>.customFilter(predicate: (T) -> Boolean): List<T> {
+private fun <T> List<T>.customFilter(predicate: (T) -> Boolean): List<T> {
     val resultList = mutableListOf<T>()
     for (item in this) {
         if (predicate(item)) {
@@ -57,7 +57,7 @@ fun <T> List<T>.customFilter(predicate: (T) -> Boolean): List<T> {
     return resultList
 }
 
-fun List<Int>.customSum(predicate: (Int) -> Boolean): Int {
+private fun List<Int>.customSum(predicate: (Int) -> Boolean): Int {
     var sum = 0
     for (item in this) {
         if (predicate(item)) {
@@ -67,7 +67,7 @@ fun List<Int>.customSum(predicate: (Int) -> Boolean): Int {
     return sum
 }
 
-fun List<Int>.products(): Int {
+private fun List<Int>.products(): Int {
     var result = 1
     for (value in this) {
         result *= value
@@ -75,7 +75,7 @@ fun List<Int>.products(): Int {
     return result
 }
 
-fun loadDataFromServer(callback: (List<String>) -> Unit) {
+private fun loadDataFromServer(callback: (List<String>) -> Unit) {
     Thread.sleep(5000)
     val data = listOf("Olutoba", "New York", "Android", "California", "Software Engineer")
     callback(data)
