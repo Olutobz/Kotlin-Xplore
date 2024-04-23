@@ -1,5 +1,6 @@
 package main.practice.classes
 
+import main.practice.tutorials.CustomException
 import main.practice.tutorials.Person
 import kotlin.random.Random
 
@@ -9,6 +10,8 @@ import kotlin.random.Random
  * DATE: 07 April 2024
  * EMAIL: damexxey94@gmail.com
  */
+
+private const val ZERO_DIVIDER = 0.0
 
 fun main() {
     val listOfAges = listOf(10, 12, 34, 49, 55, 68)
@@ -33,7 +36,21 @@ fun main() {
     Person.searchFor("How to become a better developer")
     Person.searchFor(searchEngine = "Bing", searchWord = "Improving my kotlin skills")
 
+    val division = try {
+        println(String.format("%.2f", divide(Random.nextDouble(), Random.nextDouble())))
+    } catch (e: CustomException.DivisionByZeroException) {
+        println(e.message)
+        println(e.stackTraceToString())
+        ZERO_DIVIDER
+    }
+
+    println("The result of the division is $division")
+
 }
+
+private fun divide(a: Double, b: Double) = if (b == ZERO_DIVIDER) {
+    throw CustomException.DivisionByZeroException()
+} else a / b
 
 private fun alternateAges(list: List<Int>) {
     var start = 0
@@ -68,5 +85,4 @@ private fun alternateAges(array: Array<Int>) {
         }
         toggle = !toggle
     }
-
 }

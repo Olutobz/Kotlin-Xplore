@@ -10,7 +10,7 @@ import kotlin.random.Random
 class Circle(private val radius: Double) : Shape(ShapeType.CIRCLE.name) {
 
     init {
-        if (radius < 0.0) throw NegativeRadiusException()
+        if (radius < 0.0) throw CustomException.NegativeRadiusException()
         println("$name created with radius = $radius")
         println("$name area is = ${area()}")
         println("$name perimeter is = ${perimeter()}")

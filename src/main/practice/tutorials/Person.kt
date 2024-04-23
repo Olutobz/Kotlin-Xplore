@@ -27,7 +27,7 @@ class Person {
         }
 
         fun searchFor(searchWord: String, searchEngine: String = "Google") {
-            println("Searching for $searchWord on $searchEngine")
+            println("Searching for '$searchWord on $searchEngine'")
         }
     }
 
