@@ -1,5 +1,10 @@
 package main.practice.classes
 
+import main.practice.tutorials.Circle
+import main.practice.tutorials.Rectangle
+import main.practice.tutorials.Shape
+import main.practice.tutorials.Triangle
+
 /**
  * Created by Onikoyi Damola Olutoba
  * DATE: 22 March 2024
@@ -29,18 +34,17 @@ fun main() {
     val rectangleInt = Rectangle(a = LENGTH_INT, b = BREADTH_INT)
     println("New name of shape = ${rectangleInt.name}\n")
 
-
     val triangle = Triangle(a = a, b = b, c = c)
     val maxAreaTriangleAndCircle = maxArea(circle, triangle)
     val maxAreaRectCircleTriangle = maxArea(circle, triangle, rectangle)
     println("The max area of 2 shapes = $maxAreaTriangleAndCircle")
     println("The max area of 3 shapes = $maxAreaRectCircleTriangle")
 
-    val a = 3.0
-    val b = 4.0
+    val a1 = 3.0
+    val b1 = 4.0
     val height = 5.0
 
-    val parallelogram = object : Shape("Parallelogram", a, b, height) {
+    val parallelogram = object : Shape("Parallelogram", a1, b1, height) {
         init {
             println("\nParallelogram is initialized.")
             println("The area is ${area()}")
@@ -49,11 +53,11 @@ fun main() {
         }
 
         override fun area(): Double {
-            return a * height
+            return a1 * height
         }
 
         override fun perimeter(): Double {
-            return 2 * a + 2 * b
+            return 2 * a1 + 2 * b1
         }
 
         fun isRectangle(): Boolean = height == perimeter()
