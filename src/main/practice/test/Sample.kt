@@ -13,6 +13,9 @@ import main.practice.tutorials.Triangle
 
 fun main() {
 
+    val name = "Olutoba is an Android Engineer"
+    println(name.addExclamation())
+
     var list = (1..20).toList()
     println("Initial list: $list")
     list = list.filter { it > 8 }
@@ -80,6 +83,10 @@ private fun List<Int>.products(): Int {
 
 private fun loadDataFromServer(callback: (List<String>) -> Unit) {
     Thread.sleep(5000)
-    val data = listOf("Olutoba", "New York", "Android", "California", "Software Engineer")
+    val data = listOf("Olutoba", "New York", "Android Engineer", "California", "Software Engineer")
     callback(data)
+}
+
+internal fun String.addExclamation(): String {
+    return "$this!"
 }
