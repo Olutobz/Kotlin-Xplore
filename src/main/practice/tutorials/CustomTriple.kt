@@ -11,9 +11,7 @@ class CustomTriple<A : Any, B : Any, C : Any>(
     private var third: C
 ) {
 
-    fun printTypes() {
-        println("First: ${first::class}")
-        println("Second: ${second::class}")
-        println("Third: ${third::class}")
+    fun show() {
+        println("CustomTriple: (${first}, ${second}, ${third})")
     }
 }
