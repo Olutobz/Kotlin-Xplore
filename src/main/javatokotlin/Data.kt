@@ -8,7 +8,7 @@ val User.userFormattedName: String
     get() {
         return if (lastName != null) {
             if (firstName != null) {
-                "$firstName $lastName"
+                "$firstName -> $lastName"
             } else {
                 lastName ?: "Unknown"
             }
