@@ -33,14 +33,17 @@ fun main() {
     val sum = intList.customSum { it % 2 == 1 }
     println("The sum is: $sum")
 
+    val pair = Pair(27, "Olutoba")
+    println("Pair: $pair")
+
     val triple = Triple(1.0, "Hello generics", true)
-    println(triple)
+    println("Triple: $triple")
 
     val customTriple = CustomTriple(2.0, "Hello Kotlin", false)
-    customTriple.printTypes()
+    customTriple.show()
 
-    val productList = listOf(1, 2, 3, 4, 5, 6, 7, 8)
-    println("The product of $productList is ${productList.products()}")
+    val listInt = listOf(1, 2, 3, 4, 5, 6, 7, 8)
+    println("The product of $listInt is ${listInt.products()}")
 
     println("Your data is loading ...")
     loadDataFromServer { println("Loaded data: $it") }
