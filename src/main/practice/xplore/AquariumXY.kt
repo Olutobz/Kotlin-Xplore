@@ -21,7 +21,7 @@ open class AquariumXY(
     open val water: Double
         get() = volume * 0.9
 
-    fun printSize() {
+    fun displaySizes() {
         println("$shape\nWidth: ${width}cm\nLength: ${length}cm\nHeight: ${height}cm")
         println("Volume: $volume l water: $water l (${water / volume * 100.0}% full)")
     }
@@ -29,28 +29,28 @@ open class AquariumXY(
 
 internal fun buildAquarium() {
     val myAquariumXY1 = AquariumXY()
-    myAquariumXY1.printSize()
+    myAquariumXY1.displaySizes()
 
     // default height and length
     val myAquariumXY2 = AquariumXY(width = 25)
-    myAquariumXY2.printSize()
+    myAquariumXY2.displaySizes()
 
     // default width
     val myAquariumXY3 = AquariumXY(length = 110, height = 35)
-    myAquariumXY3.printSize()
+    myAquariumXY3.displaySizes()
 
     // everything custom
     val myAquariumXY4 = AquariumXY(width = 25, length = 110, height = 35)
-    myAquariumXY4.printSize()
+    myAquariumXY4.displaySizes()
 
     val myAquariumXY5 = AquariumXY(numberOfFish = 29)
-    myAquariumXY5.printSize()
+    myAquariumXY5.displaySizes()
     myAquariumXY5.volume = 70
-    myAquariumXY5.printSize()
+    myAquariumXY5.displaySizes()
 
     val myAquariumXY6 = AquariumXY(length = 25, width = 25, height = 40)
-    myAquariumXY6.printSize()
+    myAquariumXY6.displaySizes()
 
     val myTowerTank = TowerTank(diameter = 25, height = 40)
-    myTowerTank.printSize()
+    myTowerTank.displaySizes()
 }

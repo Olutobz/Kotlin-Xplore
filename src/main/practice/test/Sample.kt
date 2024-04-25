@@ -50,13 +50,9 @@ fun main() {
     loadDataFromServer { println("Loaded data: $it") }
 
     val nums = listOf(1, 2, 3, 4, 5, 6, 7, 8)
-    nums.forEach {
-        print("$it ")
-    }
+    nums.forEach { print("$it ") }
     println()
-    nums.filter { it > 3 }.forEach {
-        print("$it ")
-    }
+    nums.filter { it > 3 }.forEach { print("$it ") }
 
     val (even, odd) = nums.partition { it % 2 == 0 }
     println("\nEven: ${even}\nOdd:${odd}")
@@ -110,9 +106,7 @@ internal fun String.addExclamation(): String {
 private fun <T> List<T>.customFilter(predicate: (T) -> Boolean): List<T> {
     val resultList = mutableListOf<T>()
     for (item in this) {
-        if (predicate(item)) {
-            resultList.add(item)
-        }
+        if (predicate(item)) resultList.add(item)
     }
     return resultList
 }
@@ -120,9 +114,7 @@ private fun <T> List<T>.customFilter(predicate: (T) -> Boolean): List<T> {
 private fun List<Int>.customSum(predicate: (Int) -> Boolean): Int {
     var sum = 0
     for (item in this) {
-        if (predicate(item)) {
-            sum += item
-        }
+        if (predicate(item)) sum += item
     }
     return sum
 }
@@ -261,7 +253,7 @@ private fun maps() {
     val cures = hashMapOf("white spots" to "Itch", "red sores" to "hole disease")
     println(cures["white spots"])
     println(cures["red sores"])
-    println(cures.getOrDefault("Dami", "Olutoba's babe"))
+    println(cures.getOrDefault("Damilola", "Olutoba\'s babe"))
     println(cures.getOrElse("bloating") { "No cure for this" })
 
     val inventory = mutableMapOf("fish nets" to 1)
