@@ -11,7 +11,11 @@ class Database private constructor() {
 
         fun getInstance(): Database? {
             if (instance == null) {
-                instance = Database()
+                synchronized(Database::class.java) {
+                    if (instance == null) {
+                        instance = Database()
+                    }
+                }
             }
             return instance
         }
