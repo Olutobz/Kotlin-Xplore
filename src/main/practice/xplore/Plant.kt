@@ -1,10 +1,8 @@
-package main.kotlindocs.annotatiions
+package main.practice.xplore
 
-import main.practice.xplore.Fish
-import java.util.*
+import main.practice.test.capitalize
 import kotlin.reflect.full.declaredMemberFunctions
 import kotlin.reflect.full.findAnnotation
-
 
 annotation class ImAPlant
 
@@ -45,12 +43,6 @@ fun testAnnotations() {
 
 }
 
-fun main() {
-    testAnnotations()
-    labels()
-    fishClass()
-}
-
 fun labels() {
     outerLoop@ for (i in 1..100) {
         print("$i ")
@@ -69,7 +61,7 @@ fun fishClass() {
 
     val fish = Fish("splashy")
     with(fish.name) {
-        println(replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() })
+        println(capitalize())
     }
 
     val fish2 = Fish(name = "splashy").apply {
@@ -78,7 +70,7 @@ fun fishClass() {
     println(fish2)
 
     println(
-        fish.name.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
+        fish.name.capitalize()
             .let { it + "fish" }.length
             .let { it + 31 })
     println(fish)

@@ -20,3 +20,9 @@ enum class Direction(val direction: Int) {
     SOUTH(3),
     WEST(4)
 }
+
+enum class Temp(val degrees: Int) {
+    HOT(95),
+    WARM(32),
+    COLD(16)
+}

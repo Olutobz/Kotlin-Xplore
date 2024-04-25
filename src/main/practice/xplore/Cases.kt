@@ -1,16 +1,5 @@
-package main.kotlindocs.generics
+package main.practice.xplore
 
-import main.practice.xplore.Riffle
-import main.practice.xplore.SniperRiffle
-import main.practice.xplore.Weapon
-
-
-fun main() {
-    useProducer(Case<SniperRiffle>())
-    useProducer(Case())
-    useConsumer(Case1<Weapon>())
-    useProducerConsumer(Case2())
-}
 
 /* testing the out(producer of T) type, It's a covariant
 * Case class with modifier out produces T and it's subtypes

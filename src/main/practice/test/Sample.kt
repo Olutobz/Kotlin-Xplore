@@ -1,6 +1,7 @@
 package main.practice.test
 
 import main.practice.xplore.*
+import java.util.*
 
 /**
  * Created by Onikoyi Damola Olutoba
@@ -76,6 +77,34 @@ fun main() {
 
     genericsExample()
 
+    kotlin.repeat(5) { println("Hello World!") }
+
+    doSomething(2, 4) { a, b -> a + b }
+
+    doSomething(3, 6, ::add)
+
+    feedTheFish()
+    eagerExample()
+    showLists()
+    maps()
+    printPairs()
+    giveMeATool()
+    destructing()
+    extensionExample()
+    testLambdas()
+
+    useProducer(Case<SniperRiffle>())
+    useProducer(Case())
+    useConsumer(Case1<Weapon>())
+    useProducerConsumer(Case2())
+}
+
+internal fun String.capitalize(): String {
+    return this.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
+}
+
+internal fun String.addExclamation(): String {
+    return "$this!"
 }
 
 private fun <T> List<T>.customFilter(predicate: (T) -> Boolean): List<T> {
@@ -112,16 +141,170 @@ private fun loadDataFromServer(callback: (List<String>) -> Unit) {
     callback(data)
 }
 
-internal fun String.addExclamation(): String {
-    return "$this!"
-}
-
 fun guide() {
-    println("Guide Start!")
+    println("Guide Start".addExclamation())
     teach()
     println("Guide ended")
 }
 
-private inline fun teach() {
-    print("Teach")
+private inline fun teach() = print("Teach")
+
+fun divideByThree(x: Int) = x / 3
+
+private inline fun repeat(times: Int, action: () -> Unit) {
+    for (i in 0 until times) {
+        action()
+    }
+}
+
+private inline fun repeatII(times: Int, noinline action: () -> Unit) {
+    for (i in 0 until times) {
+        action()
+    }
+}
+
+private inline fun doSomething(
+    a: Int,
+    b: Int,
+    noinline operation: (Int, Int) -> Int
+) = println(operation(a, b))
+
+internal fun add(a: Int, b: Int) = a + b
+
+private fun feedTheFish() {
+    val food = fishFood(getRandomDay())
+    println("On ${getRandomDay()} the fish eat $food")
+}
+
+private fun getRandomDay(): String {
+    val week = arrayOf(
+        "Monday", "Tuesday", "Wednesday", "Thursday",
+        "Friday", "Saturday", "Sunday"
+    )
+    return week[Random().nextInt(week.size)]
+}
+
+private fun fishFood(day: String): String {
+    return when (day) {
+        "Monday" -> "flakes"
+        "Wednesday" -> "redWorms"
+        "Thursday" -> "granules"
+        "Friday" -> "mosquitoes"
+        "Sunday" -> "plankton"
+        else -> "nothing"
+    }
+}
+
+private fun giveMeATool(): Pair<String, String> {
+    return ("fishnet" to "catching fish")
+}
+
+private fun destructing() {
+    val (tool, use) = giveMeATool()
+    println("Destructing $tool and $use")
+    println("Testing extension function".hasSpaces())
+
+}
+
+fun String.hasSpaces() = find { it == ' ' } != null
+
+fun extensionExample() = "Android development in kotlin".hasSpaces()
+
+fun AquariumXY?.pull() {
+    this?.apply {
+        println("Removing $this")
+    }
+}
+
+private fun testLambdas() {
+    val waterFilter = { dirty: Int -> dirty / 2 }
+    println(waterFilter)
+    println(waterFilter(30))
+}
+
+private fun eagerExample() {
+    val decorations = listOf("rock", "pagoda", "plastic plant", "alligator", "flowerpot")
+    val eager = decorations.filter { it[0] == 'p' }
+    println(eager)
+
+    // apply filter lazily
+    val filtered = decorations.asSequence().filter { it[0] == 'p' }
+    println(filtered)
+    println(filtered.toList())
+
+    // apply map lazily
+    val lazyMap = decorations.asSequence().map { print("map: $it") }
+    println(lazyMap)
+    println("first: ${lazyMap.first()}")
+    println("all: ${lazyMap.toList()}")
+
+}
+
+private fun showLists() {
+    val list = listOf(1, 5, 3, 4)
+    println(list)
+    println("sum is: ${list.sum()}")
+
+    val list2 = listOf("a", "bbb", "cc")
+    println(list2)
+    println("Sum of chars: ${list2.sumOf { it.length }}")
+
+    for (i in list2.listIterator()) {
+        println("$i ")
+    }
+}
+
+private fun maps() {
+    val names = mapOf("Olutoba" to "Damilola Boyfriend", "Android" to "Android Developers")
+    println(names["olutoba"])
+
+    val cures = hashMapOf("white spots" to "Itch", "red sores" to "hole disease")
+    println(cures["white spots"])
+    println(cures["red sores"])
+    println(cures.getOrDefault("Dami", "Olutoba's babe"))
+    println(cures.getOrElse("bloating") { "No cure for this" })
+
+    val inventory = mutableMapOf("fish nets" to 1)
+    inventory["tank scrubber"] = 3
+    println(inventory.toString())
+    inventory.remove("fish nets")
+    println(inventory.toString())
+
+}
+
+private fun printPairs() {
+    val equipment = "fishnet" to "catching fish"
+    val equip = ("fishnet" to "catching fish") to ("of big size" to "and strong")
+    val fishnet = "fishnet" to "catching fish"
+    val (tool, use) = fishnet
+    println("the $tool is a tool for $use")
+    println(fishnet.toString())
+    println(fishnet.toList())
+    println(equipment.first)
+    println(equip.first)
+    println(equip.second)
+
+    val plant: AquariumXY? = null
+    plant.pull()
+}
+
+private fun makeDecorations() {
+    val decoration1 = Decoration("granite")
+    println(decoration1)
+
+    val decoration2 = Decoration("Slate")
+    println(decoration2)
+
+    val decoration3 = Decoration("slate")
+    println(decoration3)
+
+    val decoration4 = decoration3.copy()
+    println(decoration3)
+    println(decoration4)
+
+    val decoration5 = DecorationX("crystal", "wood", "diver")
+    println(decoration5)
+
+    println(decoration1 == decoration2)
+    println(decoration3 == decoration2)
 }

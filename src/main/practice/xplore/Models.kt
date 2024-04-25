@@ -6,6 +6,10 @@ data class Developer(var name: String, var age: Int)
 
 data class Fish(var name: String)
 
+data class Decoration(val rocks: String)
+
+data class DecorationX(val rocks: String, val wood: String, val diver: String)
+
 val User.userFormattedName: String
     get() {
         return if (lastName != null) {

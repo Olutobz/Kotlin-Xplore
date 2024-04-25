@@ -16,3 +16,11 @@ interface SomeInterfaceTwo<T : Collection<*>> {
 interface Cleaner<in T : WaterSupply> {
     fun clean(waterSupply: T)
 }
+
+interface FishAction {
+    fun eat()
+}
+
+interface FishColor {
+    val color: String
+}

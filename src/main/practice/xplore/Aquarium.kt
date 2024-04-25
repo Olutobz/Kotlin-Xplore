@@ -31,7 +31,7 @@ fun genericsExample() {
 
 }
 
-fun addItemTo(aquarium: Aquarium<WaterSupply>) = println("Item added")
+fun addItemTo(aquarium: Aquarium<WaterSupply>) = println("$aquarium added")
 
 inline fun <reified T : WaterSupply> WaterSupply.isOfType() = this is T
 inline fun <reified R : WaterSupply> Aquarium<*>.hasWaterSupplyOfType2() = waterSupply is R
