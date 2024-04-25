@@ -10,6 +10,8 @@ data class Decoration(val rocks: String)
 
 data class DecorationX(val rocks: String, val wood: String, val diver: String)
 
+data class Book(val title: String, val author: String)
+
 val User.userFormattedName: String
     get() {
         return if (lastName != null) {
@@ -40,4 +42,8 @@ fun getDeveloper(): Developer {
         name = "Olutoba"
         age = 27
     }
+}
+
+fun createBook(): Book {
+    return Book("CS101", "Damola Olutoba")
 }

@@ -68,10 +68,12 @@ fun main() {
     val formattedName = user.userFormattedName
     println("Property: $formattedName")
 
+    val (title, author) = createBook()
+    println("$title -> $author")
+
     println(Repository.formattedUserNames)
     println(Repository.users)
 
-    genericsExample()
 
     kotlin.repeat(5) { println("Hello World!") }
 
@@ -89,10 +91,10 @@ fun main() {
     extensionExample()
     testLambdas()
 
-    useProducer(Case<SniperRiffle>())
-    useProducer(Case())
-    useConsumer(Case1<Weapon>())
-    useProducerConsumer(Case2())
+//    useProducer(Case<SniperRiffle>())
+//    useProducer(Case())
+//    useConsumer(Case1<Weapon>())
+//    useProducerConsumer(Case2())
 }
 
 internal fun String.capitalize(): String {
