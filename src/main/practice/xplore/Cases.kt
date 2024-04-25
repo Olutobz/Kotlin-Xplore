@@ -1,6 +1,5 @@
 package main.practice.xplore
 
-
 /* testing the out(producer of T) type, It's a covariant
 * Case class with modifier out produces T and it's subtypes
 * (i.e. preserves subtyping)
@@ -8,11 +7,7 @@ package main.practice.xplore
 
 class Case<out T> {
     private val contents = mutableListOf<T>()
-    fun produce(): T = contents.last()    // Producer OK
-}
-
-fun useProducer(case: Case<Riffle>) {
-    val riffle = case.produce()
+    fun produce(): T = contents.last()
 }
 
 /* testing the in (consumer of T) type, It's called a contravariant
@@ -23,16 +18,21 @@ class Case1<in T> {
     fun consume(item: T) = contents.add(item)
 }
 
-fun useConsumer(case1: Case1<Riffle>) {
-    case1.consume(SniperRiffle())
-}
-
 /* Generic type without any variant (invariant)
 * A producer as well as a consumer of T, disallows subtyping */
 class Case2<T> {
     private val contents = mutableListOf<T>()
-    fun produce(): T = contents.last() // producer OK
-    fun consume(item: T) = contents.add(item) // Consumer OK
+    fun produce(): T = contents.last()
+    fun consume(item: T) = contents.add(item)
+}
+
+fun useConsumer(case1: Case1<Riffle>) {
+    case1.consume(SniperRiffle())
+}
+
+fun useProducer(case: Case<Riffle>) {
+    val riffle = case.produce()
+    println(riffle)
 }
 
 fun useProducerConsumer(case: Case2<Riffle>) {
