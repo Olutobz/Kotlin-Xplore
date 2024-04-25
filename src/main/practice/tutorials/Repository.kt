@@ -1,16 +1,4 @@
-package main.javatokotlin
-
-
-fun main() {
-    val user = User(null, lastName = "Onikoyi")
-    println("Function: ${user.getFormattedName()}")
-
-    val formattedName = user.userFormattedName
-    println("Property: $formattedName")
-
-    println(Repository.formattedUserNames)
-    println(Repository.users)
-}
+package main.practice.tutorials
 
 object Repository {
     private val _users =

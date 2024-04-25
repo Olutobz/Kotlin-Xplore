@@ -1,4 +1,4 @@
-package main.javatokotlin
+package main.practice.tutorials
 
 data class User(var firstName: String?, var lastName: String?)
 

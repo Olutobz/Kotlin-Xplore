@@ -1,9 +1,6 @@
 package main.practice.test
 
-import main.practice.tutorials.Circle
-import main.practice.tutorials.CustomTriple
-import main.practice.tutorials.Rectangle
-import main.practice.tutorials.Triangle
+import main.practice.tutorials.*
 
 /**
  * Created by Onikoyi Damola Olutoba
@@ -50,6 +47,32 @@ fun main() {
 
     println("Your data is loading ...")
     loadDataFromServer { println("Loaded data: $it") }
+
+    val nums = listOf(1, 2, 3, 4, 5, 6, 7, 8)
+    nums.forEach {
+        print("$it ")
+    }
+    println()
+    nums.filter { it > 3 }.forEach {
+        print("$it ")
+    }
+
+    val (even, odd) = nums.partition { it % 2 == 0 }
+    println("\nEven: ${even}\nOdd:${odd}")
+
+    val (first, second) = "param=car".split("=")
+    println("$first $second")
+
+    println(getDeveloper())
+
+    val user = User(null, lastName = "Onikoyi")
+    println("Function: ${user.getFormattedName()}")
+
+    val formattedName = user.userFormattedName
+    println("Property: $formattedName")
+
+    println(Repository.formattedUserNames)
+    println(Repository.users)
 
 }
 

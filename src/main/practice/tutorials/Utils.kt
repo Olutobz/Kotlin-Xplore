@@ -1,4 +1,4 @@
-package main.javatokotlin
+package main.practice.tutorials
 
 class Utils private constructor() {
     companion object {

@@ -1,4 +1,4 @@
-package main.javatokotlin
+package main.practice.tutorials
 
 /**
  * Created by Onikoyi Damola Olutoba
