@@ -1,6 +1,6 @@
 package main.kotlin
 
-import main.kotlin.aquarium.Aquarium
+import main.practice.xplore.AquariumXY
 import java.util.*
 
 fun main() {
@@ -103,7 +103,7 @@ fun printPairs() {
     println(equip.first)
     println(equip.second)
 
-    val plant: Aquarium? = null
+    val plant: AquariumXY? = null
     plant.pull()
 
 }
@@ -125,7 +125,7 @@ fun extensionExample() {
     "Android development in kotlin".hasSpaces()
 }
 
-fun Aquarium?.pull() {
+fun AquariumXY?.pull() {
     this?.apply {
         println("Removing $this")
     }

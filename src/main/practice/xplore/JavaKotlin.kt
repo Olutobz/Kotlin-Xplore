@@ -1,4 +1,4 @@
-package main.practice.tutorials
+package main.practice.xplore
 
 class SomeClass : SomeInterface<String> {
     override fun doSomething(data: String) {

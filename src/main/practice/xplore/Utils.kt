@@ -1,4 +1,4 @@
-package main.practice.tutorials
+package main.practice.xplore
 
 class Utils private constructor() {
     companion object {

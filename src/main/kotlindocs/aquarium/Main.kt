@@ -1,5 +1,8 @@
 package main.kotlin.aquarium
 
+import main.practice.xplore.AquariumXY
+import main.practice.xplore.TowerTank
+
 fun main() {
     buildAquarium()
     println()
@@ -7,28 +10,28 @@ fun main() {
 }
 
 internal fun buildAquarium() {
-    val myAquarium1 = Aquarium()
-    myAquarium1.printSize()
+    val myAquariumXY1 = AquariumXY()
+    myAquariumXY1.printSize()
 
     // default height and length
-    val myAquarium2 = Aquarium(width = 25)
-    myAquarium2.printSize()
+    val myAquariumXY2 = AquariumXY(width = 25)
+    myAquariumXY2.printSize()
 
     // default width
-    val myAquarium3 = Aquarium(length = 110, height = 35)
-    myAquarium3.printSize()
+    val myAquariumXY3 = AquariumXY(length = 110, height = 35)
+    myAquariumXY3.printSize()
 
     // everything custom
-    val myAquarium4 = Aquarium(width = 25, length = 110, height = 35)
-    myAquarium4.printSize()
+    val myAquariumXY4 = AquariumXY(width = 25, length = 110, height = 35)
+    myAquariumXY4.printSize()
 
-    val myAquarium5 = Aquarium(numberOfFish = 29)
-    myAquarium5.printSize()
-    myAquarium5.volume = 70
-    myAquarium5.printSize()
+    val myAquariumXY5 = AquariumXY(numberOfFish = 29)
+    myAquariumXY5.printSize()
+    myAquariumXY5.volume = 70
+    myAquariumXY5.printSize()
 
-    val myAquarium6 = Aquarium(length = 25, width = 25, height = 40)
-    myAquarium6.printSize()
+    val myAquariumXY6 = AquariumXY(length = 25, width = 25, height = 40)
+    myAquariumXY6.printSize()
 
     val myTowerTank = TowerTank(diameter = 25, height = 40)
     myTowerTank.printSize()

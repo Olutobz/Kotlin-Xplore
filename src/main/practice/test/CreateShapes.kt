@@ -1,9 +1,9 @@
 package main.practice.test
 
-import main.practice.tutorials.Circle
-import main.practice.tutorials.Rectangle
-import main.practice.tutorials.Shape
-import main.practice.tutorials.Triangle
+import main.practice.xplore.Circle
+import main.practice.xplore.Rectangle
+import main.practice.xplore.Shape
+import main.practice.xplore.Triangle
 
 /**
  * Created by Onikoyi Damola Olutoba

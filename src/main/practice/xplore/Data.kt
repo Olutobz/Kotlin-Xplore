@@ -1,8 +1,10 @@
-package main.practice.tutorials
+package main.practice.xplore
 
 data class User(var firstName: String?, var lastName: String?)
 
 data class Developer(var name: String, var age: Int)
+
+data class Fish(var name: String)
 
 val User.userFormattedName: String
     get() {

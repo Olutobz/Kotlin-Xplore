@@ -1,6 +1,6 @@
 package main.practice.test
 
-import main.practice.tutorials.*
+import main.practice.xplore.*
 
 /**
  * Created by Onikoyi Damola Olutoba
@@ -74,6 +74,8 @@ fun main() {
     println(Repository.formattedUserNames)
     println(Repository.users)
 
+    genericsExample()
+
 }
 
 private fun <T> List<T>.customFilter(predicate: (T) -> Boolean): List<T> {
@@ -112,4 +114,14 @@ private fun loadDataFromServer(callback: (List<String>) -> Unit) {
 
 internal fun String.addExclamation(): String {
     return "$this!"
+}
+
+fun guide() {
+    println("Guide Start!")
+    teach()
+    println("Guide ended")
+}
+
+private inline fun teach() {
+    print("Teach")
 }

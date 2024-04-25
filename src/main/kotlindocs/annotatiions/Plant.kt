@@ -1,5 +1,6 @@
 package main.kotlindocs.annotatiions
 
+import main.practice.xplore.Fish
 import java.util.*
 import kotlin.reflect.full.declaredMemberFunctions
 import kotlin.reflect.full.findAnnotation
@@ -60,7 +61,6 @@ fun labels() {
     println()
 }
 
-data class Fish(var name: String)
 
 fun fishClass() {
     val myFish = listOf(Fish("Flipper"), Fish("Moby dick"), Fish("Dory"))
@@ -69,7 +69,7 @@ fun fishClass() {
 
     val fish = Fish("splashy")
     with(fish.name) {
-        println(capitalize())
+        println(replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() })
     }
 
     val fish2 = Fish(name = "splashy").apply {

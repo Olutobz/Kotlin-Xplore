@@ -1,4 +1,4 @@
-package main.practice.tutorials
+package main.practice.xplore
 
 /**
  * Created by Onikoyi Damola Olutoba
@@ -11,4 +11,8 @@ interface SomeInterface<T> {
 
 interface SomeInterfaceTwo<T : Collection<*>> {
     fun doSomething(data: T)
+}
+
+interface Cleaner<in T : WaterSupply> {
+    fun clean(waterSupply: T)
 }

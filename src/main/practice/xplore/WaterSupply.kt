@@ -1,6 +1,6 @@
-package main.kotlindocs.generics
+package main.practice.xplore
 
-open class WaterSupply(var needsProcessing : Boolean)
+open class WaterSupply(var needsProcessing: Boolean)
 
 class TapWater : WaterSupply(true) {
     fun addChemicalCleaners() {

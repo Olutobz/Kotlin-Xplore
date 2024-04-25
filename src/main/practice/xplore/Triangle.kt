@@ -1,4 +1,4 @@
-package main.practice.tutorials
+package main.practice.xplore
 
 import kotlin.math.sqrt
 
