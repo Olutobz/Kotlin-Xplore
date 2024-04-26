@@ -17,6 +17,11 @@ class Person {
             else value - 3
         }
 
+    var name: String = "Olutoba"
+        set(value) {
+            if (value.isNotEmpty()) field = value
+        }
+
     companion object {
         fun getMaxAge(vararg ages: Int): Int {
             var max = ages[0]
