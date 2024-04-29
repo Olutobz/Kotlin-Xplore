@@ -13,9 +13,11 @@ object Repository {
     init {
         val user1 = User("Android", "Kotlin")
         val user2 = User("Manhattan", "New York")
+        val user3 = User("Maine", "")
         _users.apply {
             add(user1)
             add(user2)
+            add(user3)
         }
     }
 }
