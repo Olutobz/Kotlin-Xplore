@@ -1,14 +1,15 @@
 package main.practice.xplore
 
 class Car(val color: String) {
-    private val car1 = Car("Black")
-    private val car2 = Car("Black")
-    private val car3 = car1
+    class Engine(private val engineSerialNumber: Int) {
+        override fun toString(): String {
+            return "Engine($engineSerialNumber)"
+        }
+    }
 
-    fun main() {
-        print(car1 == car2) // false ( the equals() method not invoked as it's not a data class)
-        print(car1 == car3) // true
-        print(car1 === car2) // true
-        println(car1 === car3) // true (reference equality)
+    inner class Gear(private val noOfGears: Int) {
+        override fun toString(): String {
+            return "Gear($noOfGears) -> color:$color"
+        }
     }
 }

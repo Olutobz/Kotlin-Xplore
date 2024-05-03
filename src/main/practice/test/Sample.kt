@@ -46,9 +46,6 @@ fun main() {
     val listInt = listOf(1, 2, 3, 4, 5, 6, 7, 8)
     println("The product of $listInt is ${listInt.products()}")
 
-    println("Your data is loading ...")
-    loadDataFromServer { println("Loaded data: $it") }
-
     val nums = listOf(1, 2, 3, 4, 5, 6, 7, 8)
     nums.forEach { print("$it ") }
     println()
@@ -74,11 +71,9 @@ fun main() {
     println(Repository.formattedUserNames)
     println(Repository.users)
 
-
     kotlin.repeat(5) { println("Hello World!") }
 
     doSomething(2, 4) { a, b -> a + b }
-
     doSomething(3, 6, ::add)
 
     feedTheFish()
@@ -100,10 +95,22 @@ fun main() {
     StudentRegistry.addStudent(kt)
     StudentRegistry.listAllStudents()
 
+    val car1 = Car("Black")
+    val car2 = Car("Black")
+    print(car1 == car2)
+    print(car1 === car2)
+
+    for (day in DaysOfTheWeek.entries) {
+        println("Day ${day.ordinal}: $day")
+    }
+
 //    useProducer(Case<SniperRiffle>())
 //    useProducer(Case())
 //    useConsumer(Case1<Weapon>())
 //    useProducerConsumer(Case2())
+
+    println("Your data is loading ...")
+    loadDataFromServer { println("Loaded data: $it") }
 }
 
 internal fun String.capitalize(): String {
