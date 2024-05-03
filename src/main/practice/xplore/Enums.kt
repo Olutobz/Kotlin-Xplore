@@ -10,3 +10,13 @@ enum class ShapeType {
     TRIANGLE,
     RECTANGLE
 }
+
+enum class DaysOfTheWeek {
+    SUNDAY,
+    MONDAY,
+    TUESDAY,
+    WEDNESDAY,
+    THURSDAY,
+    FRIDAY,
+    SATURDAY
+}

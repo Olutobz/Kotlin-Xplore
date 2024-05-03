@@ -63,6 +63,8 @@ fun main() {
         fun isRectangle(): Boolean = height == perimeter()
     }
 
+    println(parallelogram.area())
+
 }
 
 fun maxArea(shape1: Shape, shape2: Shape): Double {
