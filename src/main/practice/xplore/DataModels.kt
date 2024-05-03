@@ -12,6 +12,10 @@ data class DecorationX(val rocks: String, val wood: String, val diver: String)
 
 data class Book(val title: String, val author: String)
 
+data class Student(val id: Int, val firstName: String, val lastName: String) {
+    var fullname = "$firstName -> $lastName"
+}
+
 val User.userFormattedName: String
     get() {
         return if (lastName != null) {

@@ -91,6 +91,15 @@ fun main() {
     extensionExample()
     testLambdas()
 
+    val toba = Student(1, "Damola", "Onikoyi")
+    val android = Student(1, "Android", "Google")
+    val kt = Student(1, "Kotlin", "Jetbrains")
+
+    StudentRegistry.addStudent(toba)
+    StudentRegistry.addStudent(android)
+    StudentRegistry.addStudent(kt)
+    StudentRegistry.listAllStudents()
+
 //    useProducer(Case<SniperRiffle>())
 //    useProducer(Case())
 //    useConsumer(Case1<Weapon>())
