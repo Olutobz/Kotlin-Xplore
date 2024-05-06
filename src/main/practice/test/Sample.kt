@@ -2,6 +2,7 @@ package main.practice.test
 
 import main.practice.xplore.*
 import java.util.*
+import kotlin.concurrent.thread
 
 /**
  * Created by Onikoyi Damola Olutoba
@@ -71,7 +72,7 @@ fun main() {
     println(Repository.formattedUserNames)
     println(Repository.users)
 
-    kotlin.repeat(5) { println("Hello World!") }
+    repeat(2) { println("Hello World!") }
 
     doSomething(2, 4) { a, b -> a + b }
     doSomething(3, 6, ::add)
@@ -110,6 +111,8 @@ fun main() {
 //    useConsumer(Case1<Weapon>())
 //    useProducerConsumer(Case2())
 
+    guide()
+    showMsgFromDiffThreads()
     println("Your data is loading ...")
     loadDataFromServer { println("Loaded data: $it") }
 }
@@ -155,6 +158,17 @@ private fun loadDataFromServer(callback: (List<String>) -> Unit) {
     Thread.sleep(5000)
     val data = listOf("Olutoba", "New York", "Android Engineer", "California", "Software Engineer")
     callback(data)
+}
+
+private fun showMsgFromDiffThreads() {
+    thread(start = true, name = "Another thread") {
+        (0..5).forEach {
+            println("Message $it from the ${Thread.currentThread().name}")
+        }
+    }
+    (0..10).forEach {
+        println("Message $it from the ${Thread.currentThread().name}")
+    }
 }
 
 fun guide() {
