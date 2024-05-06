@@ -46,9 +46,8 @@ fun main() {
 
 }
 
-private fun divide(a: Double, b: Double) = if (b == ZERO_DIVIDER) {
-    throw CustomException.DivisionByZeroException()
-} else a / b
+private fun divide(a: Double, b: Double) =
+    if (b == ZERO_DIVIDER) throw CustomException.DivisionByZeroException() else a / b
 
 private fun alternateAges(list: List<Int>) {
     var start = 0

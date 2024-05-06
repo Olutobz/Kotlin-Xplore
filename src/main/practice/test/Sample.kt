@@ -146,6 +146,11 @@ private fun List<Int>.products(): Int {
     return result
 }
 
+private fun <T> List<T>.toBulletedList(): String {
+    val separator = "\n -"
+    return this.map { it }.joinToString(separator, prefix = separator, postfix = "\n")
+}
+
 private fun loadDataFromServer(callback: (List<String>) -> Unit) {
     Thread.sleep(5000)
     val data = listOf("Olutoba", "New York", "Android Engineer", "California", "Software Engineer")
@@ -158,6 +163,7 @@ fun guide() {
     println("Guide ended")
 }
 
+@Suppress("NOTHING_TO_INLINE")
 private inline fun teach() = print("Teach")
 
 fun divideByThree(x: Int) = x / 3
@@ -168,12 +174,14 @@ private inline fun repeat(times: Int, action: () -> Unit) {
     }
 }
 
+@Suppress("NOTHING_TO_INLINE")
 private inline fun repeatII(times: Int, noinline action: () -> Unit) {
     for (i in 0 until times) {
         action()
     }
 }
 
+@Suppress("NOTHING_TO_INLINE")
 private inline fun doSomething(
     a: Int,
     b: Int,
@@ -282,10 +290,10 @@ private fun maps() {
     println(inventory.toString())
 
     val mapAny = mapOf(Pair("one", 1), Pair("two", 2), Pair("three", 3))
-
     val valuesForKeysWithE = mapAny.keys
         .filter { it.contains("e") }
         .map { "Value for $it: ${mapAny[it]}" }
+
     println("Value for key with E: $valuesForKeysWithE")
 
 }
