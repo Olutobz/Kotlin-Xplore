@@ -93,6 +93,7 @@ fun main() {
     StudentRegistry.addStudent(toba)
     StudentRegistry.addStudent(android)
     StudentRegistry.addStudent(kt)
+    StudentRegistry.removeStudent(android)
     StudentRegistry.listAllStudents()
 
     val car1 = Car("Black")
@@ -265,7 +266,7 @@ private fun showLists() {
 }
 
 private fun maps() {
-    val names = mapOf("Olutoba" to "Damilola Boyfriend", "Android" to "Android Developers")
+    val names: Map<String, String> = mapOf("Olutoba" to "Damilola Boyfriend", "Android" to "Android Developers")
     println(names["olutoba"])
 
     val cures = hashMapOf("white spots" to "Itch", "red sores" to "hole disease")
@@ -279,6 +280,13 @@ private fun maps() {
     println(inventory.toString())
     inventory.remove("fish nets")
     println(inventory.toString())
+
+    val mapAny = mapOf(Pair("one", 1), Pair("two", 2), Pair("three", 3))
+
+    val valuesForKeysWithE = mapAny.keys
+        .filter { it.contains("e") }
+        .map { "Value for $it: ${mapAny[it]}" }
+    println("Value for key with E: $valuesForKeysWithE")
 
 }
 
