@@ -1,9 +1,7 @@
 package main.practice.test
 
-import main.practice.xplore.Circle
-import main.practice.xplore.Rectangle
-import main.practice.xplore.Shape
-import main.practice.xplore.Triangle
+import main.practice.xplore.*
+import kotlin.random.Random
 
 /**
  * Created by Onikoyi Damola Olutoba
@@ -21,6 +19,10 @@ private var b = 10.0
 private var c = 10.0
 
 fun main() {
+
+    testTypeAlias(Random.nextInt())
+    testTypeAlias("toba")
+    testTypeAlias(2.5)
 
     val circle = Circle(radius = RADIUS)
     circle.changeName("Oval")

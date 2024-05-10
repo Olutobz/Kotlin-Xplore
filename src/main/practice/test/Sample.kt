@@ -13,7 +13,7 @@ import kotlin.concurrent.thread
 fun main() {
 
     val name = "Olutoba is an Android Engineer"
-    println(name.addExclamation())
+    println(name.exclamation())
 
     var list = (1..20).toList()
     println("Initial list: $list")
@@ -121,7 +121,7 @@ internal fun String.capitalize(): String {
     return this.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
 }
 
-internal fun String.addExclamation(): String {
+internal fun String.exclamation(): String {
     return "$this!"
 }
 
@@ -172,7 +172,7 @@ private fun showMsgFromDiffThreads() {
 }
 
 fun guide() {
-    println("Guide Start".addExclamation())
+    println("Guide Start".exclamation())
     teach()
     println("Guide ended")
 }
