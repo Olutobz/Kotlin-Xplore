@@ -12,10 +12,6 @@ private typealias StudentAge = Int
 private typealias StudentName = String
 private typealias StudentCGPA = Double
 
-fun main() {
-
-}
-
 fun testTypeAlias(id: StudentAge) {
     if (id > 18) {
         println("You are old enough to vote".exclamation())
