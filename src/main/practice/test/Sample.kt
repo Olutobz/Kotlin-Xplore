@@ -102,8 +102,9 @@ fun main() {
     print(car1 == car2)
     print(car1 === car2)
 
-    for (day in DaysOfTheWeek.entries) {
-        println("Day ${day.ordinal}: $day")
+    for (day in DayOfTheWeek.entries) {
+        val currentDay = DayOfTheWeek.getCurrentDay(day.name)
+        println("Day ${day.ordinal}: $currentDay")
     }
 
 //    useProducer(Case<SniperRiffle>())

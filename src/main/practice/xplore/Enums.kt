@@ -11,14 +11,25 @@ enum class ShapeType {
     RECTANGLE
 }
 
-enum class DaysOfTheWeek {
+enum class DayOfTheWeek {
     SUNDAY,
     MONDAY,
     TUESDAY,
     WEDNESDAY,
     THURSDAY,
     FRIDAY,
-    SATURDAY
+    SATURDAY;
+
+    companion object {
+        fun getCurrentDay(day: String): DayOfTheWeek {
+            for (value in DayOfTheWeek.entries) {
+                if (value.name.equals(day, ignoreCase = true)) {
+                    return value
+                }
+            }
+            return SUNDAY
+        }
+    }
 }
 
 enum class Direction(val direction: Int) {
