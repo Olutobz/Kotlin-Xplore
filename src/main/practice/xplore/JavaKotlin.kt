@@ -13,3 +13,13 @@ class SomeClassTwo : SomeInterfaceTwo<List<String>> {
         }
     }
 }
+
+class InExampleUSage : InExample<String> {
+    override fun acceptValue(value: String) {
+        println(value)
+    }
+}
+
+class OutExampleUsage : OutExample<String> {
+    override fun returnValue(): String = "Damola Onikoyi"
+}

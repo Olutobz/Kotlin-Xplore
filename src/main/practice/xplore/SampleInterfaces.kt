@@ -24,3 +24,11 @@ interface FishAction {
 interface FishColor {
     val color: String
 }
+
+interface InExample<in T> {
+    fun acceptValue(value: T)
+}
+
+interface OutExample<out T> {
+    fun returnValue(): T
+}
