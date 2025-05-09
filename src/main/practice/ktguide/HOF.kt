@@ -1,6 +1,9 @@
 package main.practice.ktguide
 
+import main.practice.xplore.treat
+import main.practice.xplore.trick
 import kotlin.math.pow
+import kotlin.random.Random
 
 /**
  * Created by Onikoyi Damola Olutoba
@@ -55,4 +58,23 @@ fun greet(action: (String) -> Unit) {
 
 fun multiplier(factor: Int): (Int) -> Int {
     return { x -> x * factor }
+}
+
+fun trickOrTreat(
+    isTrick: Boolean,
+    operator: ((Int) -> String)?
+): () -> Unit {
+    return if (isTrick) {
+        val num = Random.nextInt(1, 5)
+        if (operator != null) {
+            println(operator(num))
+        }
+        trick
+    } else {
+        val num = Random.nextInt(1, 5)
+        if (operator != null) {
+            println(operator(num))
+        }
+        treat
+    }
 }
