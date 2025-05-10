@@ -1,7 +1,6 @@
 package main.practice.ktguide
 
 import main.practice.xplore.treat
-import main.practice.xplore.trick
 import kotlin.math.pow
 import kotlin.random.Random
 
@@ -58,6 +57,10 @@ fun greet(action: (String) -> Unit) {
 
 fun multiplier(factor: Int): (Int) -> Int {
     return { x -> x * factor }
+}
+
+val trick = {
+    println("Sorry No treats! I'll trick you instead.")
 }
 
 fun trickOrTreat(
