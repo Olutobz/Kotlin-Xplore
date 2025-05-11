@@ -1,6 +1,5 @@
 package main.practice.ktguide
 
-import main.practice.xplore.treat
 import kotlin.math.pow
 import kotlin.random.Random
 
@@ -61,6 +60,10 @@ fun multiplier(factor: Int): (Int) -> Int {
 
 val trick = {
     println("Sorry No treats! I'll trick you instead.")
+}
+
+val treat = {
+    println("Thank you, enjoying my treat!")
 }
 
 fun trickOrTreat(
