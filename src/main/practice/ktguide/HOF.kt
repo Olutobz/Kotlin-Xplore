@@ -40,6 +40,9 @@ fun main() {
 
     val doubleItFunction = multiplier(2)
     println(doubleItFunction(5))
+
+    var treatCount = 0
+    var trickCount = 0
 }
 
 private fun calculate(
