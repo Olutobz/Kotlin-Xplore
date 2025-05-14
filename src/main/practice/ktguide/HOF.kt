@@ -43,6 +43,11 @@ fun main() {
 
     var treatCount = 0
     var trickCount = 0
+
+    val trickFunction = trickOrTreat(isTrick = true) {
+        trickCount = it
+        "Preparing to trick you $it times"
+    }
 }
 
 private fun calculate(
