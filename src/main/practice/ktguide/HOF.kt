@@ -48,6 +48,10 @@ fun main() {
         trickCount = it
         "Preparing to trick you $it times"
     }
+
+    repeat(trickCount) {
+        trickFunction()
+    }
 }
 
 private fun calculate(
