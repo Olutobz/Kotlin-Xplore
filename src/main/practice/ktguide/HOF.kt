@@ -48,6 +48,7 @@ fun main() {
         trickCount = it
         "Preparing to trick you $it times"
     }
+    println()
 
     repeat(trickCount) {
         trickFunction()
