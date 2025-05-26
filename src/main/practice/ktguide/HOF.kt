@@ -53,6 +53,11 @@ fun main() {
     repeat(trickCount) {
         trickFunction()
     }
+
+    val treatFunction = trickOrTreat(isTrick = false) {
+        treatCount = it
+        "Take $it cupcakes, and enjoy your treats!"
+    }
 }
 
 private fun calculate(
