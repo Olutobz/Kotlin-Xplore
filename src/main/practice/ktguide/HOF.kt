@@ -58,6 +58,10 @@ fun main() {
         treatCount = it
         "Take $it cupcakes, and enjoy your treats!"
     }
+
+    repeat(treatCount) {
+        treatFunction()
+    }
 }
 
 private fun calculate(
