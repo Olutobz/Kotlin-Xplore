@@ -62,7 +62,7 @@ fun main() {
     println("Even numbers are: $evenNums")
 
     // filter to include only non-null numbers
-    val nonNullList = listOf(1, null, 2, null, 3).filterNotNull()
+    val nonNullList = listOfNotNull(1, null, 2, null, 3)
     println("Non-null numbers are: $nonNullList")
 
     // return first even number found
@@ -77,7 +77,7 @@ fun main() {
     val lessThanFive = listOf(1, 2, 3, 6, 4, 8).takeWhile { it < 5 }
     println("First Elements in the list lower than 5: $lessThanFive")
 
-    // drop elements from beginning of a collection
+    // drop elements from the beginning of a collection
     val withoutFirstThree = listOf(1, 2, 3, 4, 5, 6).drop(3)
     println("Elems without first three: $withoutFirstThree")
 
