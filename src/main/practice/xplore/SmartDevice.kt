@@ -8,7 +8,9 @@ package main.practice.xplore
 
 
 open class SmartDevice(val name: String, val category: String) {
+
     var deviceStatus = "online"
+    open val deviceType = "unknown"
 
     constructor(name: String, category: String, statusCode: Int) : this(name, category) {
         deviceStatus = when (statusCode) {
@@ -31,6 +33,9 @@ open class SmartDevice(val name: String, val category: String) {
 class SmartTvDevice(deviceName: String, deviceCategory: String) :
     SmartDevice(name = deviceName, category = deviceCategory) {
 
+
+    override val deviceType = "Smart TV"
+
     var speakerVolume = 4
         set(value) {
             if (value in 0..100) {
@@ -45,12 +50,22 @@ class SmartTvDevice(deviceName: String, deviceCategory: String) :
             }
         }
 
-    var deviceTurnOnCount = 0
-        private set
+    var brightnessLevel = 0
+        set(value) {
+            if (value in 0..100) {
+                field = value
+            }
+        }
+
 
     fun increaseVolume() {
         speakerVolume++;
         println("Speaker volume increased to $speakerVolume")
+    }
+
+    fun increaseBrightness() {
+        brightnessLevel++;
+        println("Speaker brightness increased to $brightnessLevel")
     }
 
     fun nextChannel() {
@@ -58,23 +73,43 @@ class SmartTvDevice(deviceName: String, deviceCategory: String) :
         println("Change number increased to $channelNumber")
     }
 
-    override fun turnOn() {
-        super.turnOn()
-        deviceTurnOnCount++
-        println("$name is turned on.")
-    }
-
-    override fun turnOff() {
-        super.turnOff()
-        deviceTurnOnCount--
-        println("$name is turned off.")
-    }
-
 }
 
-class SmartHome(val smartTvDevice: SmartTvDevice) {
+class SmartLightDevice(deviceName: String, deviceCategory: String) :
+    SmartDevice(name = deviceName, category = deviceCategory) {
+
+    override val deviceType = "Smart Light"
+}
+
+class SmartHome(
+    val smartTvDevice: SmartTvDevice,
+    val smartLightDevice: SmartLightDevice
+) {
+
+    var deviceTurnOnCount = 0
+        private set
 
     fun increaseTvVolume() {
         smartTvDevice.increaseVolume()
+    }
+
+    fun turnOnTv() {
+        deviceTurnOnCount++
+        smartTvDevice.turnOn()
+    }
+
+    fun turnOffTv() {
+        deviceTurnOnCount--
+        smartTvDevice.turnOff()
+    }
+
+    fun turnOnLight() {
+        deviceTurnOnCount++
+        smartLightDevice.turnOn()
+    }
+
+    fun turnOffLight() {
+        deviceTurnOnCount--
+        smartLightDevice.turnOff()
     }
 }
