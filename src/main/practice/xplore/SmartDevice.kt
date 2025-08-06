@@ -31,14 +31,14 @@ open class SmartDevice(val name: String, val category: String) {
 class SmartTvDevice(deviceName: String, deviceCategory: String) :
     SmartDevice(name = deviceName, category = deviceCategory) {
 
-    private var speakerVolume = 4
+    var speakerVolume = 4
         set(value) {
             if (value in 0..100) {
                 field = value
             }
         }
 
-    private var channelNumber = 19
+    var channelNumber = 19
         set(value) {
             if (value in 0..200) {
                 field = value
