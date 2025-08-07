@@ -33,30 +33,28 @@ open class SmartDevice(val name: String, val category: String) {
 class SmartTvDevice(deviceName: String, deviceCategory: String) :
     SmartDevice(name = deviceName, category = deviceCategory) {
 
-
     override val deviceType = "Smart TV"
 
-    var speakerVolume = 4
+    private var speakerVolume = 4
         set(value) {
             if (value in 0..100) {
                 field = value
             }
         }
 
-    var channelNumber = 19
+    private var channelNumber = 19
         set(value) {
             if (value in 0..200) {
                 field = value
             }
         }
 
-    var brightnessLevel = 0
+    private var brightnessLevel = 0
         set(value) {
             if (value in 0..100) {
                 field = value
             }
         }
-
 
     fun increaseVolume() {
         speakerVolume++;
