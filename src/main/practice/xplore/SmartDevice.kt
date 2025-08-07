@@ -10,6 +10,8 @@ package main.practice.xplore
 open class SmartDevice(val name: String, val category: String) {
 
     var deviceStatus = "online"
+        protected set
+
     open val deviceType = "unknown"
 
     constructor(name: String, category: String, statusCode: Int) : this(name, category) {
@@ -21,11 +23,15 @@ open class SmartDevice(val name: String, val category: String) {
     }
 
     open fun turnOn() {
-        deviceStatus = "online"
+        deviceStatus = "on"
     }
 
     open fun turnOff() {
-        deviceStatus = "offline"
+        deviceStatus = "off"
+    }
+
+    fun printDeviceInfo() {
+        println("Device Name: $name, Category: $category, Type: $deviceType")
     }
 
 }
@@ -56,12 +62,36 @@ class SmartTvDevice(deviceName: String, deviceCategory: String) :
         println("Change number increased to $channelNumber")
     }
 
+    override fun turnOff() {
+        super.turnOff()
+        println("$name turned off")
+    }
+
 }
 
 class SmartLightDevice(deviceName: String, deviceCategory: String) :
     SmartDevice(name = deviceName, category = deviceCategory) {
 
     override val deviceType = "Smart Light"
+
+    private var brightnessLevel by RangeRegulator(initialValue = 0, minValue = 0, maxValue = 100)
+
+    fun increaseBrightness() {
+        brightnessLevel++;
+        println("Speaker brightness increased to $brightnessLevel")
+    }
+
+    override fun turnOn() {
+        super.turnOn()
+        brightnessLevel = 2
+        println("$name turned on")
+    }
+
+    override fun turnOff() {
+        super.turnOff()
+        println("$name turned off")
+    }
+
 }
 
 class SmartHome(
