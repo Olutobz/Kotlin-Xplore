@@ -35,26 +35,11 @@ class SmartTvDevice(deviceName: String, deviceCategory: String) :
 
     override val deviceType = "Smart TV"
 
-    private var speakerVolume = 4
-        set(value) {
-            if (value in 0..100) {
-                field = value
-            }
-        }
+    private var speakerVolume by RangeRegulator(initialValue = 4, minValue = 0, maxValue = 100)
 
-    private var channelNumber = 19
-        set(value) {
-            if (value in 0..200) {
-                field = value
-            }
-        }
+    private var channelNumber by RangeRegulator(initialValue = 19, minValue = 0, maxValue = 200)
 
-    private var brightnessLevel = 0
-        set(value) {
-            if (value in 0..100) {
-                field = value
-            }
-        }
+    private var brightnessLevel by RangeRegulator(initialValue = 0, minValue = 0, maxValue = 100)
 
     fun increaseVolume() {
         speakerVolume++;
