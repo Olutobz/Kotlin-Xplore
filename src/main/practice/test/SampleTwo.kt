@@ -67,16 +67,34 @@ fun main() {
 
     println(parallelogram.area())
 
+    println(
+        "Your flight ticket to San Francisco would cost US$${
+            planeTicketPrice(
+                age = Random.nextInt(0, 101),
+                isMonday = Random.nextBoolean()
+            )
+        }"
+    )
+
 }
 
-fun maxArea(shape1: Shape, shape2: Shape): Double {
+private fun maxArea(shape1: Shape, shape2: Shape): Double {
     val areaSquare1 = shape1.area()
     val areaSquare2 = shape2.area()
     return if (areaSquare1 > areaSquare2) areaSquare1 else areaSquare2
 }
 
-fun maxArea(shape1: Shape, shape2: Shape, shape3: Shape): Double {
+private fun maxArea(shape1: Shape, shape2: Shape, shape3: Shape): Double {
     val maxAreaOfTwoShapes = maxArea(shape1, shape2)
     val areaSquare3 = shape3.area()
     return if (areaSquare3 > maxAreaOfTwoShapes) areaSquare3 else maxAreaOfTwoShapes
+}
+
+private fun planeTicketPrice(age: Int, isMonday: Boolean): Int {
+    return when (age) {
+        in 0..12 -> 15
+        in 13..60 -> if (isMonday) 25 else 30
+        in 61..100 -> 20
+        else -> -1
+    }
 }
