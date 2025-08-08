@@ -2,7 +2,7 @@ package main.practice.xplore
 
 /* testing the out(producer of T) type, It's a covariant
 * Case class with modifier out produces T and it's subtypes
-* (i.e. preserves subtyping)
+* (i.e., preserves subtyping)
 *  */
 
 class Case<out T> {

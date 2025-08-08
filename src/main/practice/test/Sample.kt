@@ -72,10 +72,16 @@ fun main() {
     println(Repository.formattedUserNames)
     println(Repository.users)
 
-    repeat(2) { println("Hello World!") }
+    repeat(2) {
+        println("Hello World!")
+    }
 
     doSomething(2, 4) { a, b -> a + b }
     doSomething(3, 6, ::add)
+
+    doTwice {
+        println("Welcome To San Francisco!")
+    }
 
     feedTheFish()
     eagerExample()
@@ -107,15 +113,17 @@ fun main() {
         println("Day ${day.ordinal}: $currentDay")
     }
 
-//    useProducer(Case<SniperRiffle>())
-//    useProducer(Case())
-//    useConsumer(Case1<Weapon>())
-//    useProducerConsumer(Case2())
+    useProducer(Case<SniperRiffle>())
+    useProducer(Case())
+    useConsumer(Case1<Weapon>())
+    useProducerConsumer(Case2())
 
     guide()
     showMsgFromDiffThreads()
     println("Your data is loading ...")
-    loadDataFromServer { println("Loaded data: $it") }
+    loadDataFromServer {
+        println("Loaded data: $it")
+    }
 }
 
 internal fun String.capitalize(): String {
@@ -202,6 +210,11 @@ private inline fun doSomething(
     b: Int,
     noinline operation: (Int, Int) -> Int
 ) = println(operation(a, b))
+
+inline fun doTwice(action: () -> Unit) {
+    action()
+    action()
+}
 
 internal fun add(a: Int, b: Int) = a + b
 
