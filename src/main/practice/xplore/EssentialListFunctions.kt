@@ -11,7 +11,9 @@ fun main() {
     val numbers2 = listOf(1, -2, 3)
 
     // prints each element
-    numbers.forEach { print("$it ") }
+    numbers.forEach { value ->
+        print("$value ")
+    }
     println()
 
     // perform an action on each element and its index
@@ -35,7 +37,7 @@ fun main() {
     val firstEvenNums = numbers.firstOrNull { it % 2 == 0 }
     println("First even number: $firstEvenNums")
 
-    // doubles each number in old list
+    // doubles each number in an old list
     val doubledList = numbers.map { it * 2 }
     println("Transformed new list: $doubledList")
 
@@ -47,7 +49,7 @@ fun main() {
     val groupByModTwo = numbers.groupBy { it % 2 }
     println("Group by modTwo transformed new list: $groupByModTwo")
 
-    // split into +ve and -ve list
+    // split into a +ve and -ve list
     val (positiveNums, negativeNums) = numbers2.partition { it > 0 }
     println("Positive nums: $positiveNums\nNegative nums: $negativeNums")
 
@@ -90,9 +92,9 @@ fun main() {
     println("Distinct elements in the list are: $distinctList")
 
     val customer = listOf(
-        Customer("Pizza", 25),
-        Customer("Rice", 30),
-        Customer("donuts", 15)
+        Customer(food = "Pizza", price = 25),
+        Customer(food = "Rice", price = 30),
+        Customer(food = "donuts", price = 15)
     )
 
     // returns a list of elements with distinct keys produced by the selector function.

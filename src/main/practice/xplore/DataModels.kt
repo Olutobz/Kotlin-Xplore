@@ -15,7 +15,7 @@ data class Book(val title: String, val author: String)
 data class Customer(val food: String, val price: Int)
 
 data class Student(val id: Int, val firstName: String, val lastName: String) {
-    var fullname = "$firstName -> $lastName"
+    var fullName = "$firstName -> $lastName"
 }
 
 val User.userFormattedName: String

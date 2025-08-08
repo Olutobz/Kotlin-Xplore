@@ -17,6 +17,6 @@ object StudentRegistry {
     }
 
     fun listAllStudents() {
-        allStudents.forEach { println(it.fullname) }
+        allStudents.forEach { println(it.fullName) }
     }
 }
