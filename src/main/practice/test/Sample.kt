@@ -15,26 +15,6 @@ fun main() {
     val name = "Olutoba is an Android Engineer"
     println(name.exclamation())
 
-    var list = (1..20).toList()
-    println("Initial list: $list")
-    list = list.filter { it > 8 }
-    println("Updated list: $list")
-
-    val circle1 = Circle(2.3)
-    val rectangle1 = Rectangle(16.3, 34.2)
-    val triangle1 = Triangle(13.8, 6.5, 3.5)
-
-    var shapes = listOf(circle1, rectangle1, triangle1)
-    shapes = shapes.customFilter { it.area() > 20.0 }
-    for (shape in shapes) {
-        println("${shape.name}: Area : ${shape.area()}")
-    }
-
-    val intList = (1..10).toList()
-    println(intList)
-    val sum = intList.customSum { it % 2 == 1 }
-    println("The sum is: $sum")
-
     val pair = Pair(27, "Olutoba")
     println("Pair: $pair")
 
@@ -43,9 +23,6 @@ fun main() {
 
     val customTriple = CustomTriple(2.0, "Hello Kotlin", false)
     customTriple.show()
-
-    val listInt = listOf(1, 2, 3, 4, 5, 6, 7, 8)
-    println("The product of $listInt is ${listInt.products()}")
 
     val nums = listOf(1, 2, 3, 4, 5, 6, 7, 8)
     nums.forEach { print("$it ") }
@@ -134,35 +111,6 @@ internal fun String.exclamation(): String {
     return "$this!"
 }
 
-private fun <T> List<T>.customFilter(predicate: (T) -> Boolean): List<T> {
-    val resultList = mutableListOf<T>()
-    for (item in this) {
-        if (predicate(item)) resultList.add(item)
-    }
-    return resultList
-}
-
-private fun List<Int>.customSum(predicate: (Int) -> Boolean): Int {
-    var sum = 0
-    for (item in this) {
-        if (predicate(item)) sum += item
-    }
-    return sum
-}
-
-private fun List<Int>.products(): Int {
-    var result = 1
-    for (value in this) {
-        result *= value
-    }
-    return result
-}
-
-private fun <T> List<T>.toBulletedList(): String {
-    val separator = "\n -"
-    return this.map { it }.joinToString(separator, prefix = separator, postfix = "\n")
-}
-
 private fun loadDataFromServer(callback: (List<String>) -> Unit) {
     Thread.sleep(5000)
     val data = listOf("Olutoba", "New York", "Android Engineer", "California", "Software Engineer")
@@ -170,13 +118,14 @@ private fun loadDataFromServer(callback: (List<String>) -> Unit) {
 }
 
 private fun showMsgFromDiffThreads() {
+    (0..10).forEach {
+        println("Message $it from the ${Thread.currentThread().name}")
+    }
+
     thread(start = true, name = "Another thread") {
         (0..5).forEach {
             println("Message $it from the ${Thread.currentThread().name}")
         }
-    }
-    (0..10).forEach {
-        println("Message $it from the ${Thread.currentThread().name}")
     }
 }
 
@@ -191,9 +140,9 @@ private inline fun teach() = print("Teach")
 
 fun divideByThree(x: Int) = x / 3
 
-private inline fun repeat(times: Int, action: () -> Unit) {
-    for (i in 0 until times) {
-        action()
+private inline fun customRepeat(times: Int, action: (Int) -> Unit) {
+    for (index in 0 until times) {
+        action(index)
     }
 }
 
@@ -261,7 +210,6 @@ private fun destructing() {
     val (tool, use) = giveMeATool()
     println("Destructing $tool and $use")
     println("Testing extension function".hasSpaces())
-
 }
 
 fun String.hasSpaces() = find { it == ' ' } != null

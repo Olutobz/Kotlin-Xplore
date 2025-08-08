@@ -101,4 +101,55 @@ fun main() {
     val personsDistinctByName = customer.distinctBy { it.food }
     println(personsDistinctByName)
 
+    var list = (1..20).toList()
+    println("Initial list: $list")
+    list = list.filter { it > 8 }
+    println("Updated list: $list")
+
+    val circle1 = Circle(2.3)
+    val rectangle1 = Rectangle(16.3, 34.2)
+    val triangle1 = Triangle(13.8, 6.5, 3.5)
+
+    var shapes = listOf(circle1, rectangle1, triangle1)
+    shapes = shapes.customFilter { it.area() > 20.0 }
+    for (shape in shapes) {
+        println("${shape.name}: Area : ${shape.area()}")
+    }
+
+    val intList = (1..10).toList()
+    val sum = intList.customSum { it % 2 == 1 }
+    println("The sum is: $sum")
+
+    val listInt = listOf(1, 2, 3, 4, 5, 6, 7, 8)
+    println("The product of $listInt is ${listInt.products()}")
+
+}
+
+private fun <T> List<T>.customFilter(predicate: (T) -> Boolean): List<T> {
+    val resultList = mutableListOf<T>()
+    for (item in this) {
+        if (predicate(item)) resultList.add(item)
+    }
+    return resultList
+}
+
+private fun List<Int>.customSum(predicate: (Int) -> Boolean): Int {
+    var sum = 0
+    for (item in this) {
+        if (predicate(item)) sum += item
+    }
+    return sum
+}
+
+private fun List<Int>.products(): Int {
+    var result = 1
+    for (value in this) {
+        result *= value
+    }
+    return result
+}
+
+private fun <T> List<T>.toBulletedList(): String {
+    val separator = "\n -"
+    return this.map { it }.joinToString(separator, prefix = separator, postfix = "\n")
 }
