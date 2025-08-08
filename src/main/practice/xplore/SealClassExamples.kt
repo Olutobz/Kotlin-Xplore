@@ -6,43 +6,38 @@ package main.practice.xplore
  * EMAIL: damexxey94@gmail.com
  */
 
-fun main() {
-    val exampleWithName = Example.ExampleWithName("Olutoba")
-    val exampleWithNumber = Example.ExampleWithNumber(27)
-    val emptyExample = Example.EmptyExample
-
-    printExample(exampleWithName)
-    printExample(exampleWithNumber)
-    printExample(emptyExample)
-
-    val dataOk: ApiResponse<Int> = ApiResponse.Success(2)
-    val dataFailed: ApiResponse<Nothing> = ApiResponse.Error(Throwable())
-    handleResponse(dataOk)
-    handleResponse(dataFailed)
-
-    val seals = listOf(Seal.Walrus, Seal.SeaLion)
-    for (item in seals) {
-        matchSeal(item)
-    }
-}
-
 sealed class Example {
     data class ExampleWithName(val name: String) : Example()
     data class ExampleWithNumber(val number: Int) : Example()
     data object EmptyExample : Example()
 }
 
-fun printExample(example: Example) {
-    when (example) {
-        Example.EmptyExample -> println("Empty Example")
-        is Example.ExampleWithName -> println("Example with name: ${example.name}")
-        is Example.ExampleWithNumber -> println("Example with number: ${example.number}")
-    }
-}
-
 sealed class ApiResponse<out T> {
     data class Success<out T>(val data: T) : ApiResponse<T>()
     data class Error(val exception: Throwable) : ApiResponse<Nothing>()
+}
+
+sealed class Seal {
+    data object SeaLion : Seal()
+    data object Walrus : Seal()
+}
+
+sealed class CustomException(override val message: String?) : Exception() {
+    class DivisionByZeroException : CustomException(DIVISION_BY_ZERO_EXCEPTION_MSG)
+    class NegativeRadiusException : CustomException(RADIUS_ERROR_MSG)
+
+    private companion object {
+        const val DIVISION_BY_ZERO_EXCEPTION_MSG = "You cannot divide by zero, Please choose a different number"
+        const val RADIUS_ERROR_MSG = "The radius cannot be negative"
+    }
+}
+
+fun printExample(example: Example) {
+    when (example) {
+        is Example.EmptyExample -> println("Empty Example")
+        is Example.ExampleWithName -> println("Example with name: ${example.name}")
+        is Example.ExampleWithNumber -> println("Example with number: ${example.number}")
+    }
 }
 
 fun <T> handleResponse(response: ApiResponse<T>) {
@@ -52,11 +47,6 @@ fun <T> handleResponse(response: ApiResponse<T>) {
     }
 }
 
-sealed class Seal {
-    data object SeaLion : Seal()
-    data object Walrus : Seal()
-}
-
 fun matchSeal(seal: Seal) {
     return when (seal) {
         is Seal.SeaLion -> println("sea lion")
@@ -64,8 +54,22 @@ fun matchSeal(seal: Seal) {
     }
 }
 
-sealed class CustomException(override val message: String?) : Exception() {
-    class DivisionByZeroException : CustomException("You cannot divide by zero, Please choose a different number")
+fun main() {
+    val exampleWithName = Example.ExampleWithName("Olutoba")
+    val exampleWithNumber = Example.ExampleWithNumber(27)
+    val emptyExample = Example.EmptyExample
 
-    class NegativeRadiusException : CustomException("The radius cannot be negative")
+    printExample(example = exampleWithName)
+    printExample(example = exampleWithNumber)
+    printExample(example = emptyExample)
+
+    val dataOk: ApiResponse<Int> = ApiResponse.Success(data = 2)
+    val dataFailed: ApiResponse<Nothing> = ApiResponse.Error(exception = Throwable())
+    handleResponse(response = dataOk)
+    handleResponse(response = dataFailed)
+
+    val seals = listOf(Seal.Walrus, Seal.SeaLion)
+    for (item in seals) {
+        matchSeal(item)
+    }
 }
