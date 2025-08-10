@@ -31,7 +31,10 @@ val treat = {
     println("Thank you, have a treat!")
 }
 
-fun trickOrTreat(isTrick: Boolean, extraTreat: ((Int) -> String)?): () -> Unit {
+fun trickOrTreat(
+    isTrick: Boolean,
+    extraTreat: ((Int) -> String)?
+): () -> Unit {
     return if (isTrick) trick
     else {
         val num = Random.nextInt(1, 101)
