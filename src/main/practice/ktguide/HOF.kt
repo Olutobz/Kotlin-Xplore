@@ -31,6 +31,10 @@ private fun main() {
 
 }
 
-private fun calculate(a: Int, b: Int, operation: (x: Int, y: Int) -> Int): Int {
+private fun calculate(
+    a: Int,
+    b: Int,
+    operation: (x: Int, y: Int) -> Int
+): Int {
     return operation(a, b)
 }
