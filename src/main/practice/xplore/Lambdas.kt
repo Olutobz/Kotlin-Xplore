@@ -10,36 +10,49 @@ import kotlin.random.Random
 
 fun main() {
 
-    val trickCount: (Int) -> String = {
-        "Would trick you $it times"
+    var treatCount = 0
+    var trickCount = 0
+
+    val trickFunction = trickOrTreat(isTrick = true) {
+        trickCount = it
+        "Preparing to trick you $it times"
     }
+    repeat(trickCount) {
+        trickFunction()
+    }
+    println()
 
-    val trickFunction = trickOrTreat(isTrick = true, extraTreat = trickCount)
-    val treatFunction = trickOrTreat(isTrick = false) { "Take $it cupcakes!" }
-    trickFunction()
-
-    repeat(5) {
+    val treatFunction = trickOrTreat(isTrick = false) {
+        treatCount = it
+        "Take $it cupcakes, and enjoy your treats!"
+    }
+    repeat(treatCount) {
         treatFunction()
     }
 }
 
 val trick = {
-    println("No treats! I'll trick you instead.")
+    println("Sorry No treats! I'll trick you instead.")
 }
 
 val treat = {
-    println("Thank you, have a treat!")
+    println("Thank you, enjoying my treat!")
 }
 
 fun trickOrTreat(
     isTrick: Boolean,
-    extraTreat: ((Int) -> String)?
+    operator: ((Int) -> String)?
 ): () -> Unit {
-    return if (isTrick) trick
-    else {
-        val num = Random.nextInt(1, 101)
-        if (extraTreat != null) {
-            println(extraTreat(num))
+    return if (isTrick) {
+        val num = Random.nextInt(1, 5)
+        if (operator != null) {
+            println(operator(num))
+        }
+        trick
+    } else {
+        val num = Random.nextInt(1, 5)
+        if (operator != null) {
+            println(operator(num))
         }
         treat
     }
