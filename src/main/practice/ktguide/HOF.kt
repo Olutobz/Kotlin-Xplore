@@ -25,13 +25,20 @@ fun main() {
     val pow = { base: Int, exponent: Int -> base.toDouble().pow(exponent.toDouble()) }
     println("base^exponent: ${pow(2, 3)}")
 
+    val square = { x: Int -> x * x }
+    println(square(3))
+
     val numbers = listOf(1, 2, 3, 4, 5)
-    val squaredNums = numbers.map { it * it }
-    println(squaredNums)
+    val doubled = numbers.map { it * it }
+    println(doubled)
 
     val sum2 = numbers.filter { it % 2 == 0 }.reduce { acc, number -> acc + number }
     println(sum2)
 
+    greet { println("Greetings: $it") }
+
+    val doubleItFunction = multiplier(2)
+    println(doubleItFunction(5))
 }
 
 private fun calculate(
@@ -40,4 +47,12 @@ private fun calculate(
     operation: (x: Int, y: Int) -> Int
 ): Int {
     return operation(a, b)
+}
+
+fun greet(action: (String) -> Unit) {
+    action("Welcome to San Francisco, Mr Olutoba!")
+}
+
+fun multiplier(factor: Int): (Int) -> Int {
+    return { x -> x * factor }
 }
