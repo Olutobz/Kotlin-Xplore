@@ -15,19 +15,19 @@ data class Book(val title: String, val author: String)
 data class Customer(val food: String, val price: Int)
 
 data class Student(val id: Int, val firstName: String, val lastName: String) {
-    var fullName = "$firstName -> $lastName"
+    var fullName = "Student's full name is: $firstName $lastName"
 }
 
 val User.userFormattedName: String
     get() {
         return if (lastName != null) {
             if (firstName != null) {
-                "$firstName -> $lastName"
+                "$firstName $lastName"
             } else {
-                lastName ?: "Unknown"
+                lastName.orEmpty()
             }
         } else {
-            firstName ?: "Unknown"
+            firstName.orEmpty()
         }
     }
 
@@ -36,10 +36,10 @@ fun User.getFormattedName(): String {
         if (firstName != null) {
             "$firstName $lastName"
         } else {
-            lastName ?: "Unknown"
+            lastName.orEmpty()
         }
     } else {
-        firstName ?: "unknown"
+        firstName.orEmpty()
     }
 }
 
@@ -50,6 +50,5 @@ fun getDeveloper(): Developer {
     }
 }
 
-fun createBook(): Book {
-    return Book("CS101", "Damola Olutoba")
-}
+fun createBook() = Book(title = "CS101", author = "Damola Olutoba")
+
