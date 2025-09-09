@@ -44,3 +44,20 @@ enum class Temp(val degrees: Int) {
     WARM(32),
     COLD(16)
 }
+
+enum class Difficulty {
+    EASY,
+    MEDIUM,
+    HARD;
+
+    companion object {
+        fun getDifficulty(difficulty: String): Difficulty {
+            for (i in Difficulty.entries) {
+                if (i.name.equals(other = difficulty, ignoreCase = true)) {
+                    return i
+                }
+            }
+            return EASY
+        }
+    }
+}

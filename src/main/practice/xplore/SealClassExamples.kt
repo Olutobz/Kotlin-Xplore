@@ -32,6 +32,25 @@ sealed class CustomException(override val message: String?) : Exception() {
     }
 }
 
+sealed class AcceptedCurrency {
+    abstract val valueInDollars: Float
+    private var amount: Float = 0.0f
+
+    fun totaAmount() = amount * valueInDollars
+
+    class Dollar : AcceptedCurrency() {
+        override val valueInDollars: Float = 1.0f
+    }
+
+    class Euro : AcceptedCurrency() {
+        override val valueInDollars: Float = 1.25f
+    }
+
+    class Crypto : AcceptedCurrency() {
+        override val valueInDollars: Float = 234.92f
+    }
+}
+
 fun printExample(example: Example) {
     when (example) {
         is Example.EmptyExample -> println("Empty Example")
