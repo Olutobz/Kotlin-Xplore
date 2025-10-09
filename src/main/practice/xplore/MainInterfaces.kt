@@ -5,6 +5,8 @@ package main.practice.xplore
  * DATE: 24 April 2024
  * EMAIL: damexxey94@gmail.com
  */
+
+
 interface SomeInterface<T> {
     fun doSomething(data: T)
 }
@@ -31,4 +33,9 @@ interface InExample<in T> {
 
 interface OutExample<out T> {
     fun returnValue(): T
+}
+
+interface ProgressPrintable {
+    val progressText: String
+    fun printProgressBar()
 }
