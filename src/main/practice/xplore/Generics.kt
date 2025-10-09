@@ -12,7 +12,7 @@ data class Question<T>(
     val difficulty: Difficulty
 )
 
-class Quiz {
+class Quiz : ProgressPrintable {
     val question1 = Question(
         questionText = "How many days are there between full moons?",
         answer = 28,
@@ -31,27 +31,23 @@ class Quiz {
         difficulty = Difficulty.HARD
     )
 
+    override val progressText: String
+        get() = "$answered out of $total answered."
+
+    override fun printProgressBar() {
+        repeat(answered) { print("▓") }
+        repeat(times = total - answered) { print("▒") }
+        println()
+        println(progressText)
+    }
+
     companion object StudentProgress {
         var total: Int = 10
         var answered: Int = 4
     }
 }
 
-val Quiz.StudentProgress.progressText: String
-    get() = "${Quiz.answered} out of ${Quiz.total} answered."
-
-fun Quiz.StudentProgress.printProgressBar() {
-    repeat(this.answered) {
-        print("▓")
-    }
-    repeat(times = this.total) {
-        print("▒")
-    }
-    println()
-    println(Quiz.progressText)
-}
-
 fun main() {
-    Quiz.printProgressBar()
+    Quiz().printProgressBar()
     println("Progress: ${Quiz.answered * 100 / Quiz.total}%")
 }
