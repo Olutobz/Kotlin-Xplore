@@ -8,15 +8,30 @@ data class Fish(var name: String)
 
 data class Decoration(val rocks: String)
 
-data class DecorationX(val rocks: String, val wood: String, val diver: String)
+data class DecorationX(
+    val rocks: String,
+    val wood: String, val
+    diver: String
+)
 
 data class Book(val title: String, val author: String)
 
 data class Customer(val food: String, val price: Int)
 
-data class Student(val id: Int, val firstName: String, val lastName: String) {
+data class Student(
+    val id: Int,
+    val firstName: String,
+    val lastName: String
+) {
     var fullName = "Student's full name is: $firstName $lastName"
 }
+
+data class Event(
+    val title: String,
+    val description: String? = null,
+    val dayPart: DayPart,
+    val duration: Int
+)
 
 val User.userFormattedName: String
     get() {
