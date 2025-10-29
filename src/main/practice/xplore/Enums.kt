@@ -62,3 +62,9 @@ enum class Difficulty {
         }
     }
 }
+
+enum class DayPart {
+    MORNING,
+    AFTERNOON,
+    EVENING
+}
