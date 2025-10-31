@@ -66,7 +66,7 @@ fun main() {
             title = "Eat breakfast",
             description = "Gain some energy for the day",
             dayPart = DayPart.MORNING,
-            duration = 65
+            durationInMinutes = 65
         )
     )
     events.add(
@@ -74,7 +74,7 @@ fun main() {
             title = "Eat Lunch",
             description = "Try finishing up for the day",
             dayPart = DayPart.AFTERNOON,
-            duration = 70
+            durationInMinutes = 70
         )
     )
     events.add(
@@ -82,7 +82,7 @@ fun main() {
             title = "Go out for a jog",
             description = "Get some fresh Air",
             dayPart = DayPart.MORNING,
-            duration = 90
+            durationInMinutes = 90
         )
     )
     events.add(
@@ -90,15 +90,19 @@ fun main() {
             title = "Eat Dinner",
             description = "Get some sleep after",
             dayPart = DayPart.EVENING,
-            duration = 30
+            durationInMinutes = 30
         )
     )
-    val shortEvents = events.filter { it.duration < 60 }
+    val shortEvents = events.filter { it.durationInMinutes < 60 }
     println("you have ${shortEvents.size} short events")
 
     val groupedEvents = events.groupBy { it.dayPart }
     groupedEvents.forEach { (dayPart, events) ->
         println("You have ${events.size} events for $dayPart")
     }
+
+    println("Last event of the day: ${events.last().title}")
+
+    println("Duration of first event of the day: ${events[0].durationOfEvent}")
 
 }
